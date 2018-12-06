@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMover : MonoBehaviour {
     public GameObject sliderblock;
     private float r;
-    public Transform initPos;
     private bool inpress;
     private int touchID;
     private Vector2 clickPos;
@@ -45,10 +44,9 @@ public class PlayerMover : MonoBehaviour {
         }
         else
         {
-            sliderblock.transform.localPosition = initPos.localPosition;
+            sliderblock.transform.localPosition = Vector3.zero;
         }
     }
-
 
 
 }
