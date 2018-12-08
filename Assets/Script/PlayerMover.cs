@@ -21,6 +21,7 @@ public class PlayerMover : MonoBehaviour {
     {
         inpress = pressed;
         touchID = UICamera.currentTouchID;
+        print(touchID);
     }
 
     private void Update()

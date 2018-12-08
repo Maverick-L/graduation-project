@@ -14,6 +14,8 @@ public class ViewMove : MonoBehaviour {
 
     private void Update()
     {
+       
+
         RoundView();
     }
    /// <summary>
@@ -32,6 +34,7 @@ public class ViewMove : MonoBehaviour {
 
         if (isRound)
         {
+            print(Input.GetAxis("Mouse X"));
             transform.RotateAround(player.position, Vector3.up, Input.GetAxis("Mouse X") * speed);
             transform.RotateAround(player.position, transform.right, Input.GetAxis("Mouse Y") * -speed);
 
