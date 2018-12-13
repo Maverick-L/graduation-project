@@ -19,3 +19,4 @@
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
+[merge]tool= unityyamlmerge [mergetool "unityyamlmerge"]trustExitCode= falsecmd= '<path to UnityYAMLMerge>'merge -p "$BASE""$REMOTE""$LOCAL""$MERGED"
