@@ -388,6 +388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 300010955}
   - component: {fileID: 300010956}
+  - component: {fileID: 300010957}
   m_Layer: 8
   m_Name: title
   m_TagString: Untagged
@@ -442,7 +443,7 @@ MonoBehaviour:
   mHeight: 80
   mDepth: 2
   mMat: {fileID: 0}
-  autoResizeBoxCollider: 0
+  autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 2.5
@@ -476,6 +477,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!65 &300010957
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 300010954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 200, y: 80, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &386380500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,7 +1632,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliderblock: {fileID: 1628940453}
+  initPos: {fileID: 0}
   uicamera: {fileID: 386380503}
+  player: {fileID: 0}
+  ani: {fileID: 0}
 --- !u!65 &1182324895
 BoxCollider:
   m_ObjectHideFlags: 0
