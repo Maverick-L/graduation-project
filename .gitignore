@@ -28,6 +28,9 @@ ehthumbs.db
 # Visual Studio 2015 cache/options directory
 /.vs/
 
+#NGUI
+/NGUI/
+
 # Unity generated
 # ===============
 [Oo]bj/
