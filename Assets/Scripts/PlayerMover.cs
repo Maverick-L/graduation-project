@@ -57,14 +57,14 @@ public class PlayerMover : MonoBehaviour
             }
             Quaternion targetAngle = Quaternion.Euler(0, angle, 0);
             player.rotation = Quaternion.Slerp(player.rotation, targetAngle, Time.deltaTime);
-            ani.SetFloat("Blend", 5.6f, 3f, Time.deltaTime);
+            ani.SetFloat("Blend", 5.6f, 1f, Time.deltaTime);
         }
         else
         {
             sliderblock.transform.localPosition = Vector3.zero;
             //控制站住 不移动
             player.rotation = Quaternion.Slerp(player.rotation, initRot, Time.deltaTime);
-            ani.SetFloat("Blend", 0, 2f, Time.deltaTime);
+            ani.SetFloat("Blend", 0, 0.5f, Time.deltaTime);
         }
     }
 
