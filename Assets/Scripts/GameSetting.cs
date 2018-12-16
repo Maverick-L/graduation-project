@@ -7,17 +7,12 @@ public class GameSetting : MonoBehaviour {
 	public float volume = 1;
 
 	public void OnVolumeChanged() {
-		volume = UIProgressBar.current.value;
+		volume = UIProgressBar.current.value;//调节声音大小
 	}
 
+	//设置画面切换
 	public TweenPosition startPanelTween;
-	public TweenPosition playPanleTween;
 	public TweenPosition optionPanleTween;
-
-	public void OnPlayButtonClick(){
-		startPanelTween.PlayForward();
-		playPanleTween.PlayForward();
-	}
 
 	public void OnOptionButtonClick() {
 		startPanelTween.PlayForward();

@@ -54,8 +54,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: f39eb24d392c9a448babbbd0ac6501ff, type: 2}
   mSprites:
   - name: attack
-    x: 3515
-    y: 1440
+    x: 3695
+    y: 1420
     width: 47
     height: 54
     borderLeft: 0
@@ -66,6 +66,19 @@ MonoBehaviour:
     paddingRight: 3
     paddingTop: 6
     paddingBottom: 2
+  - name: backpack_grid
+    x: 3770
+    y: 1420
+    width: 55
+    height: 55
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: Bg
     x: 0
     y: 1024
@@ -80,8 +93,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: bg1
-    x: 3673
-    y: 1490
+    x: 3754
+    y: 1552
     width: 49
     height: 50
     borderLeft: 0
@@ -145,19 +158,6 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: char_cyberKid_dff
-    x: 2306
-    y: 1024
-    width: 1024
-    height: 1024
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: char_cyberKid_nrm
     x: 1281
     y: 1024
     width: 1024
@@ -170,9 +170,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: char_cyberKid_nrm
+    x: 2306
+    y: 1024
+    width: 1024
+    height: 1024
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: chat
-    x: 3703
-    y: 1541
+    x: 3830
+    y: 1477
     width: 65
     height: 57
     borderLeft: 0
@@ -183,8 +196,34 @@ MonoBehaviour:
     paddingRight: 2
     paddingTop: 2
     paddingBottom: 3
+  - name: close
+    x: 3996
+    y: 1494
+    width: 34
+    height: 40
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: close2
+    x: 3703
+    y: 1603
+    width: 70
+    height: 70
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 3
+    paddingTop: 3
+    paddingBottom: 3
   - name: control
-    x: 3331
+    x: 3511
     y: 1366
     width: 183
     height: 183
@@ -197,8 +236,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: control_small
-    x: 3703
-    y: 1599
+    x: 3695
+    y: 1475
     width: 74
     height: 74
     borderLeft: 0
@@ -209,9 +248,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: crystal
+    x: 3770
+    y: 1476
+    width: 59
+    height: 58
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 1
+    paddingTop: 2
+    paddingBottom: 3
   - name: defence
-    x: 3632
-    y: 1497
+    x: 3955
+    y: 1482
     width: 40
     height: 52
     borderLeft: 0
@@ -223,8 +275,8 @@ MonoBehaviour:
     paddingTop: 5
     paddingBottom: 5
   - name: equip
-    x: 3515
-    y: 1495
+    x: 3830
+    y: 1422
     width: 57
     height: 54
     borderLeft: 0
@@ -235,9 +287,22 @@ MonoBehaviour:
     paddingRight: 2
     paddingTop: 5
     paddingBottom: 4
+  - name: equip_bg
+    x: 3331
+    y: 1325
+    width: 179
+    height: 224
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 1
+    paddingTop: 0
+    paddingBottom: 1
   - name: gold
-    x: 3573
-    y: 1490
+    x: 3896
+    y: 1475
     width: 58
     height: 59
     borderLeft: 0
@@ -249,8 +314,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 3
   - name: hp
-    x: 3769
-    y: 1539
+    x: 3774
+    y: 1614
     width: 32
     height: 59
     borderLeft: 0
@@ -262,8 +327,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 2
   - name: info
-    x: 3723
-    y: 1488
+    x: 3703
+    y: 1552
     width: 50
     height: 50
     borderLeft: 0
@@ -274,6 +339,32 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: scroballbar_bg
+    x: 4066
+    y: 1634
+    width: 29
+    height: 414
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: scrollbar
+    x: 3770
+    y: 1535
+    width: 14
+    height: 16
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
   mPixelSize: 1
   mReplacement: {fileID: 0}
   mCoordinates: 0
