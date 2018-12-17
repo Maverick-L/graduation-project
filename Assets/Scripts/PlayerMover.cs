@@ -55,9 +55,38 @@ public class PlayerMover : MonoBehaviour
             {
                 angle = -angle;
             }
-            Quaternion targetAngle = Quaternion.Euler(0, angle, 0);
-            player.rotation = Quaternion.Slerp(player.rotation, targetAngle, Time.deltaTime);
-            ani.SetFloat("Blend", 5.6f, 1f, Time.deltaTime);
+            //如果为正常模式下的走路状态
+            if (PlayerContral._sigletion.state == PlayerContral.playerState.Normal)
+            {
+                Quaternion targetAngle = Quaternion.Euler(0, angle, 0);
+                player.rotation = Quaternion.Slerp(player.rotation, targetAngle, Time.deltaTime);
+                ani.SetFloat("Blend", 5.6f, 1f, Time.deltaTime);
+            }
+            //为战斗模式下的走路状态
+            else
+            {
+                if (angle == 0)
+                {
+                    ani.SetFloat("AngularBlend", 2.101294f);
+                }
+                if (angle < 90 && angle > 0)
+                {
+                    ani.SetFloat("AngularBlend", 2.101294f);
+                }
+            
+               if (angle < 180 && angle > 90)
+                {
+                ani.SetFloat("AngularBlend", 2.101294f);
+                }
+                if (angle < 90 && angle > 0)
+                {
+                    ani.SetFloat("AngularBlend", 2.101294f);
+                }
+                if (angle < 90 && angle > 0)
+                {
+                    ani.SetFloat("AngularBlend", 2.101294f);
+                }
+            }
         }
         else
         {
