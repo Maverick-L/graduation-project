@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 public class EnemyContral : MonoBehaviour {
-
+    private Animator ani;
     public Transform[] waypoint;
     public int index;
     NavMeshAgent nav;
@@ -12,6 +12,7 @@ public class EnemyContral : MonoBehaviour {
     private float speedTime ;
     private void Awake()
     {
+        ani = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
     }
     private void Start()
@@ -43,6 +44,6 @@ public class EnemyContral : MonoBehaviour {
                 time += Time.deltaTime;
               }
             }
-
+        ani.SetBool("isWalk", true);
     }
 }
