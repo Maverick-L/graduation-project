@@ -26,7 +26,10 @@ ehthumbs.db
 *.booproj
 
 # Visual Studio 2015 cache/options directory
-.vs/
+/.vs/
+
+#NGUI
+/NGUI/
 
 # Unity generated
 # ===============
