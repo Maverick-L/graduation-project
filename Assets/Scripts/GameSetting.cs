@@ -11,8 +11,15 @@ public class GameSetting : MonoBehaviour {
 	}
 
 	//设置画面切换
+	public GameObject StartUI;
+	public GameObject MainCityUI;
 	public TweenPosition startPanelTween;
 	public TweenPosition optionPanleTween;
+
+	public void OnPlayButtonClick() {
+		StartUI.SetActive(false);
+		MainCityUI.SetActive(true);
+	}
 
 	public void OnOptionButtonClick() {
 		startPanelTween.PlayForward();
