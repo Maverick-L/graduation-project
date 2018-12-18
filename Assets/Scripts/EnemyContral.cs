@@ -28,22 +28,27 @@ public class EnemyContral : MonoBehaviour {
     }
     void Portrolint()
     {
-       
+
         if (nav.remainingDistance < 0.1)
+        {
+
+            if (time >= speedTime)
             {
-          
-              if (time >= speedTime)
-              {
                 index += 1;
                 index = index % waypoint.Length;
                 nav.destination = waypoint[index].position;
                 time = 0;
-              }
-              else
-              {
-                time += Time.deltaTime;
-              }
             }
-        ani.SetBool("isWalk", true);
+            else
+            {
+                ani.SetBool("isWalk", false);
+                ani.SetBool("isRun", false);
+                time += Time.deltaTime;
+            }
+        }
+        else
+        {
+            ani.SetBool("isWalk", true);
+        }
     }
 }
