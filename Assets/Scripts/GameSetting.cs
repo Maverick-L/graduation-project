@@ -5,8 +5,6 @@ using UnityEngine;
 public class GameSetting : MonoBehaviour {
 
 	public float volume = 1;
-    public GameObject startUI;
-    public GameObject mainUI;
 	public void OnVolumeChanged() {
 		volume = UIProgressBar.current.value;//调节声音大小
 	}
@@ -25,9 +23,5 @@ public class GameSetting : MonoBehaviour {
 		startPanelTween.PlayReverse();
 		optionPanleTween.PlayReverse();
 	}
-    public void OnPlayButtonClick()
-    {
-        startUI.SetActive(false);
-        mainUI.SetActive(true);
-    }
+
 }
