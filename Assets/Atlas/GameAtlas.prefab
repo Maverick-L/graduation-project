@@ -54,8 +54,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: f39eb24d392c9a448babbbd0ac6501ff, type: 2}
   mSprites:
   - name: attack
-    x: 3695
-    y: 1420
+    x: 3581
+    y: 1239
     width: 47
     height: 54
     borderLeft: 0
@@ -67,8 +67,8 @@ MonoBehaviour:
     paddingTop: 6
     paddingBottom: 2
   - name: backpack_grid
-    x: 3770
-    y: 1420
+    x: 4018
+    y: 1243
     width: 55
     height: 55
     borderLeft: 0
@@ -93,8 +93,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: bg1
-    x: 3754
-    y: 1552
+    x: 3629
+    y: 1243
     width: 49
     height: 50
     borderLeft: 0
@@ -119,8 +119,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: bg3
-    x: 3331
-    y: 1550
+    x: 3588
+    y: 1294
     width: 371
     height: 123
     borderLeft: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: char_cyberKid_board_dff
     x: 3809
-    y: 1792
+    y: 1418
     width: 256
     height: 256
     borderLeft: 0
@@ -145,8 +145,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: char_cyberKid_board_nrm
-    x: 3809
-    y: 1535
+    x: 3331
+    y: 1417
     width: 256
     height: 256
     borderLeft: 0
@@ -184,8 +184,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: chat
-    x: 3830
-    y: 1477
+    x: 3515
+    y: 1288
     width: 65
     height: 57
     borderLeft: 0
@@ -197,8 +197,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 3
   - name: close
-    x: 3996
-    y: 1494
+    x: 3768
+    y: 1520
     width: 34
     height: 40
     borderLeft: 0
@@ -210,8 +210,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: close2
-    x: 3703
-    y: 1603
+    x: 3515
+    y: 1346
     width: 70
     height: 70
     borderLeft: 0
@@ -223,8 +223,8 @@ MonoBehaviour:
     paddingTop: 3
     paddingBottom: 3
   - name: control
-    x: 3511
-    y: 1366
+    x: 3331
+    y: 1233
     width: 183
     height: 183
     borderLeft: 0
@@ -236,8 +236,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: control_small
-    x: 3695
-    y: 1475
+    x: 3960
+    y: 1343
     width: 74
     height: 74
     borderLeft: 0
@@ -249,8 +249,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: crystal
-    x: 3770
-    y: 1476
+    x: 4035
+    y: 1359
     width: 59
     height: 58
     borderLeft: 0
@@ -262,8 +262,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 3
   - name: defence
-    x: 3955
-    y: 1482
+    x: 3768
+    y: 1621
     width: 40
     height: 52
     borderLeft: 0
@@ -275,8 +275,8 @@ MonoBehaviour:
     paddingTop: 5
     paddingBottom: 5
   - name: equip
-    x: 3830
-    y: 1422
+    x: 3960
+    y: 1288
     width: 57
     height: 54
     borderLeft: 0
@@ -288,8 +288,8 @@ MonoBehaviour:
     paddingTop: 5
     paddingBottom: 4
   - name: equip_bg
-    x: 3331
-    y: 1325
+    x: 3588
+    y: 1449
     width: 179
     height: 224
     borderLeft: 0
@@ -301,8 +301,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 1
   - name: gold
-    x: 3896
-    y: 1475
+    x: 4035
+    y: 1299
     width: 58
     height: 59
     borderLeft: 0
@@ -313,9 +313,22 @@ MonoBehaviour:
     paddingRight: 2
     paddingTop: 1
     paddingBottom: 3
+  - name: head_icon
+    x: 3809
+    y: 1675
+    width: 229
+    height: 373
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: hp
-    x: 3774
-    y: 1614
+    x: 3768
+    y: 1561
     width: 32
     height: 59
     borderLeft: 0
@@ -327,8 +340,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 2
   - name: info
-    x: 3703
-    y: 1552
+    x: 3515
+    y: 1237
     width: 50
     height: 50
     borderLeft: 0
@@ -353,8 +366,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: scrollbar
-    x: 3770
-    y: 1535
+    x: 4018
+    y: 1326
     width: 14
     height: 16
     borderLeft: 0
