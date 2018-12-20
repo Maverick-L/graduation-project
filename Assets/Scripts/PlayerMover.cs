@@ -50,43 +50,14 @@ public class PlayerMover : MonoBehaviour
             {
                 sliderblock.transform.localPosition = (clickPos - JoyStick).normalized * r;
             }
-            float angle = Vector3.Angle(initPos.up,sliderblock.transform.localPosition);
-            if(Mathf.Sign(Vector3.Dot(initPos.right, sliderblock.transform.localPosition)) < 0)
+            float angle = Vector3.Angle(initPos.up, sliderblock.transform.localPosition);
+            if (Mathf.Sign(Vector3.Dot(initPos.right, sliderblock.transform.localPosition)) < 0)
             {
                 angle = -angle;
             }
-            //如果为正常模式下的走路状态
-            if (PlayerContral._sigletion.state == PlayerContral.playerState.Normal)
-            {
-                Quaternion targetAngle = Quaternion.Euler(0, angle, 0);
-                player.rotation = Quaternion.Slerp(player.rotation, targetAngle, Time.deltaTime);
-                ani.SetFloat("Blend", 5.6f, 1f, Time.deltaTime);
-            }
-            //为战斗模式下的走路状态
-            else
-            {
-                if (angle == 0)
-                {
-                    ani.SetFloat("AngularBlend", 2.101294f);
-                }
-                if (angle < 90 && angle > 0)
-                {
-                    ani.SetFloat("AngularBlend", 2.101294f);
-                }
-            
-               if (angle < 180 && angle > 90)
-                {
-                ani.SetFloat("AngularBlend", 2.101294f);
-                }
-                if (angle < 90 && angle > 0)
-                {
-                    ani.SetFloat("AngularBlend", 2.101294f);
-                }
-                if (angle < 90 && angle > 0)
-                {
-                    ani.SetFloat("AngularBlend", 2.101294f);
-                }
-            }
+            Quaternion targetAngle = Quaternion.Euler(0, angle, 0);
+            player.rotation = Quaternion.Slerp(player.rotation, targetAngle, Time.deltaTime);
+            ani.SetFloat("Blend", 5.6f, 1f, Time.deltaTime);
         }
         else
         {
