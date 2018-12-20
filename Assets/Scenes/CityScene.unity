@@ -158,6 +158,26 @@ Prefab:
       propertyPath: onClick.Array.data[0].mTarget
       value: 
       objectReference: {fileID: 1398031602}
+    - target: {fileID: 114761789352848442, guid: 456acb2c2a29d0345815c773f3e19a3b,
+        type: 2}
+      propertyPath: mColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114761789352848442, guid: 456acb2c2a29d0345815c773f3e19a3b,
+        type: 2}
+      propertyPath: mColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114761789352848442, guid: 456acb2c2a29d0345815c773f3e19a3b,
+        type: 2}
+      propertyPath: mColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114761789352848442, guid: 456acb2c2a29d0345815c773f3e19a3b,
+        type: 2}
+      propertyPath: mColor.a
+      value: 0.8509804
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456acb2c2a29d0345815c773f3e19a3b, type: 2}
   m_IsPrefabAsset: 0
