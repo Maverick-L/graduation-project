@@ -9,9 +9,9 @@ public class EnemyContral : MonoBehaviour {
         Attack,
         Track //攻击状态
     }
-    public Transform attackinitPos;//攻击距离
+    //public Transform attackinitPos;//攻击距离
 
-    private float  attackDistance;//攻击距离
+    private float  attackDistance=10f;//攻击距离
     public static EnemyContral _instance;//单例
     public Enemystate state;//状态
     private Animator ani;
@@ -30,7 +30,7 @@ public class EnemyContral : MonoBehaviour {
     }
     private void Start()
     {
-        attackDistance = Vector3.Distance(transform.position,attackinitPos.position);//攻击距离初始化
+        //attackDistance = Vector3.Distance(transform.position,attackinitPos.position);//攻击距离初始化
         index = 0;
         speedTime = 3f;
         nav.destination = waypoint[index].position;
@@ -56,6 +56,7 @@ public class EnemyContral : MonoBehaviour {
         ani.SetBool("IsAttackLayer", false);
         ani.SetBool("isRun", false);
         ani.SetBool("isWalk", true);
+        nav.speed = 1f;
         if (nav.remainingDistance < 0.1)
         {
 
@@ -84,21 +85,23 @@ public class EnemyContral : MonoBehaviour {
     void Track()
     {
         ani.SetBool("IsAttackLayer", false);
+        ani.SetBool("isRun", true);
+        ani.SetBool("isWalk", false);
         nav.destination = playerpos;
+        nav.speed = 3.5f;
         if (nav.remainingDistance <= attackDistance)
         {
-            nav.speed = 3f;
+            
             state = Enemystate.Attack;
-            ani.SetBool("isRun", true);
-            ani.SetBool("isWalk", false);
-                }
+           
+        }
     }
     /// <summary>
     /// 进行攻击
     /// </summary>
     void Attack()
     {
-        ani.SetBool("IsRun", false);
+       // ani.SetBool("IsRun", false);
         ani.SetBool("IsAttackLayer", true);
     }
 }
