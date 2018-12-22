@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAtteck : MonoBehaviour {
-
+ 
     private void OnTriggerStay(Collider other)
     {
 
