@@ -10,7 +10,7 @@ public class Attack_detection: MonoBehaviour {
         if (other.gameObject.name == "player")
         {
             print("aa");
-            Attack.attack(this.gameObject.name);
+          //  Attack.attack(this.gameObject.name);
         }
     }
 }
