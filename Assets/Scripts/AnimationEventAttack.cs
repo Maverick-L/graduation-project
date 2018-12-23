@@ -12,6 +12,9 @@ public class AnimationEventAttack : MonoBehaviour {
     public Transform playerRightPos;
     public Transform playerFootpos;
 
+    public delegate void AttackName(string name, string AttackName);
+    public static event AttackName attack;
+
     /// <summary>
     /// 怪物左手攻击
     /// </summary>
@@ -32,7 +35,7 @@ public class AnimationEventAttack : MonoBehaviour {
     public void EnemyDouble()
     {
         AttackCheck(EventRightPos.position, true, "Enemy_Right");
-        AttackCheck(EventLiftPos.position, true,"Enemy_Right");
+        AttackCheck(EventLiftPos.position, true,"Enemy_Lift");
     }
     /// <summary>
     /// player左手攻击
@@ -78,8 +81,9 @@ public class AnimationEventAttack : MonoBehaviour {
             foreach (Collider go in attaccollider)
             {
                 //调用攻击  collider返回的是被攻击的物体
-                Attack.attack(name, go.gameObject.name);
-               
+                 AnimationEventAttack.attack(name, go.gameObject.name);
+               // print(name);      
+                
             }
         }
     }
