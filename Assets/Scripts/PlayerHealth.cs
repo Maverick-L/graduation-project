@@ -25,7 +25,13 @@ public class PlayerHealth : MonoBehaviour {
         if (AttackName == "char_ethan")
         {
             print(name + "攻击了" + AttackName);
-            //进行攻击扣血表示
+            switch (name)
+            {
+                case "Enemy_Left":blood -= leftAttack;
+                    break;
+                case "Enemy)_Right":blood -= rightAttack;
+                    break;
+            }
 
             if (blood <= 0)
             {

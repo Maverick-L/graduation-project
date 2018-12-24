@@ -11,7 +11,7 @@ public class EnemyContral : MonoBehaviour {
     }
     //public Transform attackinitPos;//攻击距离
 
-    private float  attackDistance=10f;//攻击距离
+    private float  attackDistance=20f;//攻击距离
     public static EnemyContral _instance;//单例
     public Enemystate state;//状态
     private Animator ani;
@@ -103,5 +103,6 @@ public class EnemyContral : MonoBehaviour {
     {
        // ani.SetBool("IsRun", false);
         ani.SetBool("IsAttackLayer", true);
+       // GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 }
