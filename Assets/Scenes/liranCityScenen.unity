@@ -916,6 +916,16 @@ Prefab:
       propertyPath: initPos
       value: 
       objectReference: {fileID: 1265455088}
+    - target: {fileID: 136916959216719972, guid: 1d5fa5c20f888db4785d99c4604078c4,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 135651871768831246, guid: 1d5fa5c20f888db4785d99c4604078c4,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d5fa5c20f888db4785d99c4604078c4, type: 2}
   m_IsPrefabAsset: 0
