@@ -29,10 +29,10 @@ public class NGUIViewControl : MonoBehaviour {
                 {
                     targetCamera.RotateAround(player.position, Vector3.up, targetPos.normalized.x * speed);
                 }
-                if ((Vector3.Angle(targetPos, Vector3.right) < 105 && Vector3.Angle(targetPos, Vector3.right) > 85)|| (Vector3.Angle(targetPos, Vector3.left) < 105 && Vector3.Angle(targetPos, Vector3.left                             ) > 85))
-                {
-                    targetCamera.RotateAround(player.position, targetCamera.right, targetPos.normalized.y * -speed);
-                }
+                //if ((Vector3.Angle(targetPos, Vector3.right) < 105 && Vector3.Angle(targetPos, Vector3.right) > 85)|| (Vector3.Angle(targetPos, Vector3.left) < 105 && Vector3.Angle(targetPos, Vector3.left                             ) > 85))
+                //{
+                //    targetCamera.RotateAround(player.position, targetCamera.right, targetPos.normalized.y * -speed);
+                //}
 
             }
         }
