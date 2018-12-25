@@ -53,7 +53,7 @@ public class EnemyContral : MonoBehaviour {
     }
     void Portrolint()
     {
-        ani.SetBool("IsAttackLayer", false);
+       
         ani.SetBool("isRun", false);
         ani.SetBool("isWalk", true);
         nav.speed = 1f;
@@ -84,7 +84,7 @@ public class EnemyContral : MonoBehaviour {
     /// </summary>
     void Track()
     {
-        ani.SetBool("IsAttackLayer", false);
+      
         ani.SetBool("isRun", true);
         ani.SetBool("isWalk", false);
         nav.destination = playerpos;
@@ -101,8 +101,7 @@ public class EnemyContral : MonoBehaviour {
     /// </summary>
     void Attack()
     {
-       // ani.SetBool("IsRun", false);
-        ani.SetBool("IsAttackLayer", true);
+        ani.SetTrigger("IsAttack");
        // GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 }

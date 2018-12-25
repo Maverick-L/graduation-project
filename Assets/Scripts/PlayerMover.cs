@@ -39,9 +39,10 @@ public class PlayerMover : MonoBehaviour
         if (inpress)
         {
 
-          // GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().constraints=~RigidbodyConstraints.FreezePosition;
+        
 
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().constraints=~RigidbodyConstraints.FreezePosition;
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().constraints=~RigidbodyConstraints.FreezePosition;
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
             //触碰的点的位置
             clickPos = UICamera.GetTouch(touchID, false).pos;
             //虚拟按键的点的屏幕坐标
@@ -65,7 +66,7 @@ public class PlayerMover : MonoBehaviour
         {
             sliderblock.transform.localPosition = Vector3.zero;
             //控制站住 不移动
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+           // GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
             ani.SetFloat("Blend", 0, 0.5f, Time.deltaTime);
         }

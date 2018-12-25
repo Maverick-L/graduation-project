@@ -59,6 +59,13 @@ public class AnimationEventAttack : MonoBehaviour {
         AttackCheck(playerFootpos.position, false, "Player_Foot");
     }
 
+    //攻击结束一次后切换为正常状态
+    public void AttackStop()
+    {
+        GetComponent<Animator>().SetBool("isAttackLayer", false);
+        PlayerContral._sigletion.state = PlayerContral.playerState.Normal;
+    }
+
     /// <summary>
     /// 攻击检测，
     /// </summary>
