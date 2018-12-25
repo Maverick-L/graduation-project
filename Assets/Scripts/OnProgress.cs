@@ -10,7 +10,7 @@ public class OnProgress : MonoBehaviour
     public void OnBtnClick()
     {
         Debug.Log("clicked");
-        Globe.nextSceneName = "CityScene";//目标场景名称
+        Globe.nextSceneName = "liranCityScenen";//目标场景名称
         SceneManager.LoadScene("Loading");//加载进度条场景
     }
 }

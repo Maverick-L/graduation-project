@@ -126,7 +126,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1746135780884172
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +503,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114898539523558366, guid: 01b422157fb664e42a16428f14cd6a41, type: 2}
+  mAtlas: {fileID: 114233820209742642, guid: 01b422157fb664e42a16428f14cd6a41, type: 2}
   mSpriteName: attack
   mFillCenter: 1
 --- !u!114 &114149234617356264
@@ -595,7 +595,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114898539523558366, guid: 01b422157fb664e42a16428f14cd6a41, type: 2}
+  mAtlas: {fileID: 114233820209742642, guid: 01b422157fb664e42a16428f14cd6a41, type: 2}
   mSpriteName: defence
   mFillCenter: 1
 --- !u!114 &114154998271586256
@@ -649,7 +649,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114898539523558366, guid: 01b422157fb664e42a16428f14cd6a41, type: 2}
+  mAtlas: {fileID: 114233820209742642, guid: 01b422157fb664e42a16428f14cd6a41, type: 2}
   mSpriteName: bg1
   mFillCenter: 1
 --- !u!114 &114278409493454798
@@ -740,7 +740,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
+  mAtlas: {fileID: 114233820209742642, guid: 01b422157fb664e42a16428f14cd6a41, type: 2}
   mSpriteName: Button
   mFillCenter: 1
 --- !u!114 &114388575110423860
@@ -819,7 +819,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114898539523558366, guid: 01b422157fb664e42a16428f14cd6a41, type: 2}
+  mAtlas: {fileID: 114233820209742642, guid: 01b422157fb664e42a16428f14cd6a41, type: 2}
   mSpriteName: control
   mFillCenter: 1
 --- !u!114 &114526173948643764
@@ -873,7 +873,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114898539523558366, guid: 01b422157fb664e42a16428f14cd6a41, type: 2}
+  mAtlas: {fileID: 114233820209742642, guid: 01b422157fb664e42a16428f14cd6a41, type: 2}
   mSpriteName: info
   mFillCenter: 1
 --- !u!114 &114598049247181158
@@ -1022,6 +1022,6 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114898539523558366, guid: 01b422157fb664e42a16428f14cd6a41, type: 2}
+  mAtlas: {fileID: 114233820209742642, guid: 01b422157fb664e42a16428f14cd6a41, type: 2}
   mSpriteName: control_small
   mFillCenter: 1
