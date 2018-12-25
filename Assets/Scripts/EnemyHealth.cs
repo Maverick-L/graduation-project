@@ -12,7 +12,9 @@ public class EnemyHealth : MonoBehaviour {
     public Transform initPos;
     public GameObject Enemy;
     Animator ani;
-    private void Awake()
+
+	public HUDText text;
+	private void Awake()
     {
         ani = GetComponent<Animator>();
         
@@ -28,9 +30,8 @@ public class EnemyHealth : MonoBehaviour {
         if(AttackName== "bull_king")
         {
             print(name + "攻击了" + AttackName);
-            //进行攻击扣血表示
-
-            switch (name)
+			//进行攻击扣血表示
+			switch (name)
             {
                 case "Player_Lift": blood -= leftAttack;
                     //与UI交互
