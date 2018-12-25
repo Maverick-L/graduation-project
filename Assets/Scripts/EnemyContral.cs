@@ -11,7 +11,7 @@ public class EnemyContral : MonoBehaviour {
     }
     //public Transform attackinitPos;//攻击距离
 
-    private float  attackDistance=20f;//攻击距离
+    private float  attackDistance=3f;//攻击距离
     public static EnemyContral _instance;//单例
     public Enemystate state;//状态
     private Animator ani;
@@ -53,7 +53,7 @@ public class EnemyContral : MonoBehaviour {
     }
     void Portrolint()
     {
-       
+        nav.isStopped = false;
         ani.SetBool("isRun", false);
         ani.SetBool("isWalk", true);
         nav.speed = 1f;
@@ -84,15 +84,15 @@ public class EnemyContral : MonoBehaviour {
     /// </summary>
     void Track()
     {
-      
+        nav.isStopped = false;
         ani.SetBool("isRun", true);
         ani.SetBool("isWalk", false);
         nav.destination = playerpos;
         nav.speed = 3.5f;
         if (nav.remainingDistance <= attackDistance)
         {
-            
-            state = Enemystate.Attack;
+            nav.isStopped = true;
+            Attack();
            
         }
     }
@@ -102,6 +102,7 @@ public class EnemyContral : MonoBehaviour {
     void Attack()
     {
         ani.SetTrigger("IsAttack");
+
        // GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 }
