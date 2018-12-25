@@ -30,7 +30,7 @@ public class PlayerMover : MonoBehaviour
     {
         inpress = pressed;
         touchID = UICamera.currentTouchID;
-        print(touchID);
+
     }
 
     private void Update()
@@ -38,6 +38,11 @@ public class PlayerMover : MonoBehaviour
 
         if (inpress)
         {
+
+        
+
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().constraints=~RigidbodyConstraints.FreezePosition;
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
             //触碰的点的位置
             clickPos = UICamera.GetTouch(touchID, false).pos;
             //虚拟按键的点的屏幕坐标
@@ -50,20 +55,19 @@ public class PlayerMover : MonoBehaviour
             {
                 sliderblock.transform.localPosition = (clickPos - JoyStick).normalized * r;
             }
-            float angle = Vector3.Angle(initPos.up,sliderblock.transform.localPosition);
-            if(Mathf.Sign(Vector3.Dot(initPos.right, sliderblock.transform.localPosition)) < 0)
-            {
-                angle = -angle;
-            }
-            Quaternion targetAngle = Quaternion.Euler(0, angle, 0);
-            player.rotation = Quaternion.Slerp(player.rotation, targetAngle, Time.deltaTime);
+           
+            Vector3 angle = new Vector3(sliderblock.transform.localPosition.x, 0, sliderblock.transform.localPosition.y);
+            Quaternion targetAngle = Quaternion.LookRotation(angle.normalized);
+            player.rotation = Quaternion.Lerp(player.rotation, targetAngle, Time.deltaTime*2f);
             ani.SetFloat("Blend", 5.6f, 1f, Time.deltaTime);
+         
         }
         else
         {
             sliderblock.transform.localPosition = Vector3.zero;
             //控制站住 不移动
-            player.rotation = Quaternion.Slerp(player.rotation, initRot, Time.deltaTime);
+           // GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
             ani.SetFloat("Blend", 0, 0.5f, Time.deltaTime);
         }
     }
