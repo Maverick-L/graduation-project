@@ -33,12 +33,13 @@ public class PlayerHealth : MonoBehaviour {
                     break;
             }
 
-            if (blood <= 0)
-            {
-                ani.SetBool("isDie", true);
-                //死亡后禁止移动
-                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;//禁止所有方向上的移动
-            }
+      
+        }
+        if (blood <= 0)
+        {
+            ani.SetTrigger("isDle");
+            //死亡后禁止移动
+          //  GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;//禁止所有方向上的移动
         }
     }
 

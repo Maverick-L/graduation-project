@@ -46,6 +46,7 @@ public class EnemyHealth : MonoBehaviour {
                 ani.SetTrigger("isDle");
                 ani.SetBool("IsAttackLayer", false); 
                 GetComponent<NavMeshAgent>().enabled = false;
+                GetComponent<EnemyContral>().enabled = false;
             }
         }
     }
