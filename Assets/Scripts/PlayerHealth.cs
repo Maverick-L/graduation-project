@@ -32,7 +32,6 @@ public class PlayerHealth : MonoBehaviour {
         }
         bloodLabel.text = Blood + "/100";
     }
-
     void Attack(string name, string AttackName)
     {
         if (AttackName == "char_ethan")
@@ -47,8 +46,7 @@ public class PlayerHealth : MonoBehaviour {
                     blood -= rightAttack;
                     break;
             }
-            print(blood);
-      
+            print(blood);      
         }
         if (blood <= 0)
         {
@@ -59,7 +57,6 @@ public class PlayerHealth : MonoBehaviour {
         }
     }
     //属性 访问器
-
     public float Blood
     {
         get { return blood; }

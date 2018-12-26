@@ -97,8 +97,7 @@ public class EnemyContral : MonoBehaviour {
         if (nav.remainingDistance <= attackDistance)
         {
             nav.isStopped = true;
-            Attack();
-           
+            Attack();           
         }
     }
     /// <summary>
@@ -109,7 +108,5 @@ public class EnemyContral : MonoBehaviour {
   
         this.transform.LookAt(GameObject.FindWithTag("Player").transform, Vector3.up);
         ani.SetTrigger("IsAttack");
-
-       // GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 }
