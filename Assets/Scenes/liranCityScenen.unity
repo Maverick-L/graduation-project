@@ -4306,7 +4306,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400088, guid: 3b059b06d05c0e04ba42674f84feac25, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400088, guid: 3b059b06d05c0e04ba42674f84feac25, type: 3}
       propertyPath: m_LocalRotation.z
@@ -4314,7 +4314,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400088, guid: 3b059b06d05c0e04ba42674f84feac25, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400088, guid: 3b059b06d05c0e04ba42674f84feac25, type: 3}
       propertyPath: m_RootOrder
@@ -6594,9 +6594,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e43c93c0cd8ef4896d57b746d2a07c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blood: 100
   leftAttack: 20
   rightAttack: 10
+  bloodslider: {fileID: 297069110}
+  bloodLabel: {fileID: 298160563}
 --- !u!1 &1142822411
 GameObject:
   m_ObjectHideFlags: 0
