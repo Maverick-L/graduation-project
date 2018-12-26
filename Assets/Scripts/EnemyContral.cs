@@ -101,6 +101,7 @@ public class EnemyContral : MonoBehaviour {
     /// </summary>
     void Attack()
     {
+        this.transform.LookAt(GameObject.FindWithTag("Player").transform, Vector3.up);
         ani.SetTrigger("IsAttack");
 
        // GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;

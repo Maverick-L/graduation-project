@@ -27,12 +27,14 @@ public class PlayerHealth : MonoBehaviour {
             print(name + "攻击了" + AttackName);
             switch (name)
             {
-                case "Enemy_Left":blood -= leftAttack;
+                case "Enemy_Lift":
+                    blood -= leftAttack;
                     break;
-                case "Enemy)_Right":blood -= rightAttack;
+                case "Enemy_Right":
+                    blood -= rightAttack;
                     break;
             }
-
+            print(blood);
       
         }
         if (blood <= 0)

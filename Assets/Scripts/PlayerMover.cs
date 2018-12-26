@@ -68,7 +68,7 @@ public class PlayerMover : MonoBehaviour
             //控制站住 不移动
            // GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
-            ani.SetFloat("Blend", 0, 0.5f, Time.deltaTime);
+            ani.SetFloat("Blend", 0, 0.1f, Time.deltaTime);
         }
     }
 
