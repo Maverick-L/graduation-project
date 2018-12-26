@@ -84,6 +84,11 @@ public class EnemyContral : MonoBehaviour {
     /// </summary>
     void Track()
     {
+        if (PlayerHealth.blood <= 0)
+        {
+            EnemyContral._instance.state = Enemystate.Portrolint;
+            return;
+        }
         nav.isStopped = false;
         ani.SetBool("isRun", true);
         ani.SetBool("isWalk", false);
@@ -101,6 +106,7 @@ public class EnemyContral : MonoBehaviour {
     /// </summary>
     void Attack()
     {
+  
         this.transform.LookAt(GameObject.FindWithTag("Player").transform, Vector3.up);
         ani.SetTrigger("IsAttack");
 

@@ -27,6 +27,7 @@ public class EnemyHealth : MonoBehaviour {
 
     void Attack(string name, string AttackName)
     {
+        
         if(AttackName== "bull_king")
         {
             print(name + "攻击了" + AttackName);
@@ -50,6 +51,13 @@ public class EnemyHealth : MonoBehaviour {
                 GetComponent<EnemyContral>().enabled = false;
             }
         }
+    }
+
+    //属性 访问器
+
+    public float Blood
+    {
+        get { return blood; }
     }
 
     public void Dle()
