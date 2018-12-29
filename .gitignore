@@ -29,7 +29,11 @@ ehthumbs.db
 /.vs/
 
 #NGUI
-/NGUI/
+Scene/NGUI
+
+#GitHubOfUnity
+
+Scene/Plugins
 
 # Unity generated
 # ===============
