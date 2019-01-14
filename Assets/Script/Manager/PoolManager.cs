@@ -7,11 +7,13 @@ public class PoolManager : MonoBehaviour {
     public enum Type
     {
         NPC,
-        GOODS,
+        Consumables,
+        Arm
     }
     private bool isInpool;
     public NPCPoolManager _NPCinstance;
-    public GOODSPoolManager _GOODSinstance;
+    public Consumables _Consumablesinstance;
+    public Arm _Arminstance;
     private Dictionary<Type, Queue<GameObject>> pool = new Dictionary<Type, Queue<GameObject>>();
 
     /// <summary>
@@ -21,7 +23,8 @@ public class PoolManager : MonoBehaviour {
     {
 
         pool.Add(Type.NPC,   new Queue<GameObject>());
-        pool.Add(Type.GOODS, new Queue<GameObject>());
+        pool.Add(Type.Arm, new Queue<GameObject>());
+        pool.Add(Type.Consumables, new Queue<GameObject>());
     }
 
     /// <summary>
