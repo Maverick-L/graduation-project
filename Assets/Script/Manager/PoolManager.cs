@@ -8,12 +8,10 @@ public class PoolManager : MonoBehaviour {
     {
         NPC,
         GOODS,
-        ENEMY
     }
     private bool isInpool;
     public NPCPoolManager _NPCinstance;
     public GOODSPoolManager _GOODSinstance;
-    public ENEMYPoolManager _ENEMYinstance;
     private Dictionary<Type, Queue<GameObject>> pool = new Dictionary<Type, Queue<GameObject>>();
 
     /// <summary>
@@ -21,41 +19,30 @@ public class PoolManager : MonoBehaviour {
     /// </summary>
     public PoolManager()
     {
-        //_NPCinstance = new NPCPoolManager(this);
-        //_GOODSinstance = new GOODSPoolManager(this);
-        //_ENEMYinstance = new ENEMYPoolManager(this);
+
         pool.Add(Type.NPC,   new Queue<GameObject>());
         pool.Add(Type.GOODS, new Queue<GameObject>());
-        pool.Add(Type.ENEMY, new Queue<GameObject>());
     }
 
     /// <summary>
     /// 生成一个物体
     /// </summary>
-    public void Create(Transform targetTransform, GameObject targetObject, Type type)
+    public GameObject Create(Transform targetTransform, GameObject targetObject, Type type)
     {
-        isInpool = false;
-        foreach (GameObject go in pool[type])
+      
+        foreach (GameObject ob in pool[type])
         {
-            if (go.name.Equals(targetObject.name) && go.activeSelf == false)
+            if (ob.name.Equals(targetObject.name) && ob.activeSelf == false)
             {
-                isInpool = true;
-                go.transform.position = targetTransform.position;
-                go.transform.rotation = targetTransform.rotation;
-                go.SetActive (true);
-                break;
-            }
-            
+                return ob;
+            }  
         }
-        if (!isInpool)
-        {
             GameObject go=GameObject.Instantiate(targetObject);
-            go.transform.position = targetTransform.position;
-            go.transform.rotation = targetTransform.rotation;
             go.name = targetObject.name;
             pool[type].Enqueue(go);
-        }
-       
+          return go;
+
+
     }
 
 
@@ -69,10 +56,23 @@ public class PoolManager : MonoBehaviour {
             if (go.name .Equals(targetObject.name)&&targetObject.transform==go.transform&&go.activeSelf==true)
             {
                 go.SetActive(false);
+            }
+           
+        }
+    }
+
+    public void ResetPool()
+    {
+        foreach( Queue<GameObject> qu in pool.Values)
+        {
+            foreach(GameObject go in qu)
+            {
+                Destroy(go);
                 
             }
-            print(go.transform.position);
+            qu.Clear();
         }
+        pool.Clear();
     }
 
 

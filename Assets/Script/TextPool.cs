@@ -17,5 +17,12 @@ public class TextPool : MonoBehaviour
         {
             GameManagers._instance._poolManager.Destroy(GameObject.Find("Cube"), PoolManager.Type.NPC, 3f);
         }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            GameManagers._instance._poolManager.Create(TargetNPC, TarNpc, PoolManager.Type.NPC);
+            
+
+
+        }
     }
 }
