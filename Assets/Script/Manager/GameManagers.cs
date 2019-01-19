@@ -7,6 +7,7 @@ public class GameManagers : MonoBehaviour {
     public static GameManagers _instance;
     public PoolManager _poolManager;
     public AudioManager _AudioManager;
+    public GUIManager _GUIManager;
     private void Start()
     { 
         if (_instance == null)
@@ -21,6 +22,7 @@ public class GameManagers : MonoBehaviour {
     {
         _poolManager = new PoolManager();
         _AudioManager = new AudioManager();
+        _GUIManager = new GUIManager();
     }
     /// <summary>
     /// 创建一个怪物
