@@ -6,8 +6,10 @@ public class GameManagers : MonoBehaviour {
 
     public static GameManagers _instance;
     public PoolManager _poolManager;
-    public AudioManager _AudioManager;
-    public GUIManager _GUIManager;
+    public AudioManager _audioManager;
+    public GUIManager _guiManager;
+    public LevelManager _levelManager;
+    public Effect _effect;
     private void Start()
     { 
         if (_instance == null)
@@ -21,8 +23,10 @@ public class GameManagers : MonoBehaviour {
     public void initManager()
     {
         _poolManager = new PoolManager();
-        _AudioManager = new AudioManager();
-        _GUIManager = new GUIManager();
+        _audioManager = new AudioManager();
+        _guiManager = new GUIManager();
+        _levelManager = new LevelManager();
+        _effect = new Effect();
     }
     /// <summary>
     /// 创建一个怪物
@@ -58,6 +62,15 @@ public class GameManagers : MonoBehaviour {
     public void ResetPool()
     {
         _poolManager.ResetPool();
+    }
+    /// <summary>
+    /// 怪物或者人物的状态
+    /// </summary>
+    /// <param name="effect"></param>
+    /// <param name="Target"></param>
+    public void CreateEffect(Effects.Effect effect,GameObject Target)
+    {
+        _effect.Task(effect, Target);
     }
 }
 

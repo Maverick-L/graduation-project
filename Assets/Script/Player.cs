@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : NPCPoolManager
 {
-
     public string Name
     {
         get { return name; }
@@ -26,6 +25,9 @@ public class Player : NPCPoolManager
         get { return speed; }
     }
 
+    public GameObject[] Arms;//人物的武器
+    public GameObject[] Goods;//人物的药品
+
     public  void Init( int Grade, float speed, float blood)
     {
         this.type = NPCType.Player;
@@ -37,16 +39,15 @@ public class Player : NPCPoolManager
 
     public override void Massager()
     {
-       
+        throw new System.NotImplementedException();
     }
 
     public override void Task()
     {
-       
+        throw new System.NotImplementedException();
     }
     public override void Death()
     {
-
+        throw new System.NotImplementedException();
     }
-
 }

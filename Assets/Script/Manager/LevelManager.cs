@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
 
@@ -11,7 +11,6 @@ public class LevelManager : MonoBehaviour
     private Queue<string> nomalLevel = new Queue<string>();//普通关卡
     private List<string> hiddenLevel = new List<string>();//隐藏关卡
     private string mainSceneName;//主场景名称
-
     public LevelManager()
     {
         Init();
@@ -19,10 +18,20 @@ public class LevelManager : MonoBehaviour
     public void Init()
     {
         //给所有场景赋值
+        cutSceneName = "CutScene";
         //初始化nomalLevel  如队列
         //初始化隐藏关卡
         //设置SceneName等于当前场景名称
 
+    }
+    public string NextSceneName
+    {
+        get {
+            return nextSceneName;
+        }
+    }
+    public string CutSceneName {
+        get { return cutSceneName; }
     }
     /// <summary>
     /// 添加关卡属性
@@ -80,7 +89,14 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void CutScene()
     {
-
+        SceneManager.LoadScene(cutSceneName);
+    }
+    
+    public void updateMassage()
+    {
+        //寻找人物的初始落点
+        //初始化人物的资源
+        //初始化人物的武器
     }
 
 }
