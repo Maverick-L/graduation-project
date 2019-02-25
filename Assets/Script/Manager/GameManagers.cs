@@ -34,9 +34,11 @@ public class GameManagers : MonoBehaviour {
     public void CreatEnemy(Transform targetTransform, GameObject targetObject, int grade, float speed, float blood = 100,float attackDamage = 5f, float attackRange = 10f)
     {
       GameObject go= _poolManager.Create(targetTransform, targetObject, PoolManager.Type.NPC);
-        go.SetActive(true);
         //初始化
-        go.GetComponent<Enemy>().Init(attackDamage, attackRange, grade,speed,blood);
+        go.AddComponent<Enemy>();
+      go.GetComponent<Enemy>().Init(attackDamage, attackRange, grade,speed,blood);
+        //创建
+      Create(go, targetTransform);
     }
     /// <summary>
     /// 创建Player
@@ -44,18 +46,35 @@ public class GameManagers : MonoBehaviour {
     public void CreatePlayer(Transform targetTransform, GameObject targetObject, int grade, float speed, float blood=100f)
     {
         GameObject go = _poolManager.Create(targetTransform, targetObject, PoolManager.Type.NPC);
-        go.SetActive(true);
+        go.AddComponent<Player>();
         go.GetComponent<Player>().Init(grade,speed,blood);
+        Create(go, targetTransform);
     }
     /// <summary>
-    /// 创建Merchant
+    /// 创建商人Merchant
     /// </summary>
     public void CreateMerchant(Transform targetTransform, GameObject targetObject)
     {
         GameObject go = _poolManager.Create(targetTransform, targetObject, PoolManager.Type.NPC);
-        go.SetActive(true);
+        go.AddComponent<Merchant>();
         //go.GetComponent<Player>().Init();
+        Create(go, targetTransform);
     }
+    /// <summary>
+    /// 生成，创建
+    /// </summary>
+    private void Create(GameObject go,Transform targetTransform)
+    {
+        go.SetActive(true);
+        go.transform.position = targetTransform.position;
+        go.transform.rotation = targetTransform.rotation;
+    }
+
+    public void Destroy(GameObject go)
+    {
+        _poolManager.Destroy(go);
+    }
+
     /// <summary>
     /// 清除对象池中所有数据
     /// </summary>
@@ -66,8 +85,6 @@ public class GameManagers : MonoBehaviour {
     /// <summary>
     /// 怪物或者人物的状态
     /// </summary>
-    /// <param name="effect"></param>
-    /// <param name="Target"></param>
     public void CreateEffect(Effects.Effect effect,GameObject Target)
     {
         _effect.Task(effect, Target);

@@ -19,7 +19,6 @@ public class AsyncLoadScene : MonoBehaviour
         }   
     }
 
-
     IEnumerator  AsynLoding()
     {
         operation = SceneManager.LoadSceneAsync(GameManagers._instance._levelManager.NextSceneName);

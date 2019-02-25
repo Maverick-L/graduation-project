@@ -44,10 +44,6 @@ public class AudioManager : MonoBehaviour
     /// <summary>
     /// 传入三个值播放音乐
     /// </summary>
-    /// <param AudioClip="clip"></param>
-    /// <param Vector3="point"></param>
-    /// <param float="value"></param>
-    /// <param  bool="loop"></param>
     /// <returns></returns>
     public AudioSource Play(AudioClip clip, Transform point, float value, bool loop)
     {
