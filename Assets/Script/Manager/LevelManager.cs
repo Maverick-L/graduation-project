@@ -48,6 +48,15 @@ public class LevelManager : MonoBehaviour
         set { hiddenLevel.Add(value); }
     }
 
+    public void ChooseScene(string name)
+    {
+        nextSceneName = name;
+        CutScene();
+    }
+
+    /// <summary>
+    /// 进入下一关卡
+    /// </summary>
     public void NomalScene()
     {
         if (nomalLevel != null) {
@@ -87,7 +96,7 @@ public class LevelManager : MonoBehaviour
     /// <summary>
     /// 切换场景
     /// </summary>
-    public void CutScene()
+    private void CutScene()
     {
         SceneManager.LoadScene(cutSceneName);
     }

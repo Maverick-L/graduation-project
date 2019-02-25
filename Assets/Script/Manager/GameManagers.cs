@@ -89,6 +89,27 @@ public class GameManagers : MonoBehaviour {
     {
         _effect.Task(effect, Target);
     }
+    /// <summary>
+    /// 进入选择关卡
+    /// </summary>
+    public void CutChooseScene(string name)
+    {
+        _levelManager.ChooseScene(name);
+    }
+    /// <summary>
+    /// 进入下一关
+    /// </summary>
+    public void CutNextNomalScene()
+    {
+        _levelManager.NomalScene();
+    }
+    /// <summary>
+    /// 进入隐藏关卡
+    /// </summary>
+    public void CutHiddleScene()
+    {
+        _levelManager.HiddenScene();
+    }
 }
 
 

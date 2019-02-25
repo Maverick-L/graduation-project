@@ -483,8 +483,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolManager: {fileID: 0}
-  _AudioManager: {fileID: 0}
-  _GUIManager: {fileID: 0}
+  _audioManager: {fileID: 0}
+  _guiManager: {fileID: 0}
+  _levelManager: {fileID: 0}
+  _effect: {fileID: 0}
 --- !u!4 &1859160644
 Transform:
   m_ObjectHideFlags: 0
@@ -577,7 +579,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1888234148}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1771779636}
+        m_MethodName: TextLevelManager
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1888234148
