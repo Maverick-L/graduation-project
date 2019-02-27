@@ -15,7 +15,7 @@ public class GameManagers : MonoBehaviour {
     {
         GameObject go = new GameObject("GameManagers");
         DontDestroyOnLoad(go);
-        _instance = go.AddComponent<GameManagers>();
+        _instance = go.AddComponent<GameManagers>(); 
        _instance.initManager();
     }
     
@@ -119,6 +119,11 @@ public class GameManagers : MonoBehaviour {
     public string CutSceneName()
     {
         return _levelManager.CutSceneName;
+    }
+
+    public void Text()
+    {
+        print("Text成功");
     }
 }
 

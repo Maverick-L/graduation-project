@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoolManager : MonoBehaviour {
+public class PoolManager  {
 
     public enum Type
     {
@@ -21,10 +21,10 @@ public class PoolManager : MonoBehaviour {
     /// </summary>
     public PoolManager()
     {
-
         pool.Add(Type.NPC,new Queue<GameObject>());
         pool.Add(Type.Arm, new Queue<GameObject>());
         pool.Add(Type.Consumables, new Queue<GameObject>());
+        
     }
 
     /// <summary>

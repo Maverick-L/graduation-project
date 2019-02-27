@@ -24,7 +24,7 @@ public class AsyncLoadScene : MonoBehaviour
     IEnumerator  AsynLoding()
     {
         operation = SceneManager.LoadSceneAsync(GameManagers._instance._levelManager.NextSceneName);
-        print(GameManagers._instance._levelManager.NextSceneName);
+     
         operation.allowSceneActivation = false;
         yield return operation;
     }

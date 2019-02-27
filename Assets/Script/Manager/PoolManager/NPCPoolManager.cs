@@ -13,9 +13,9 @@ public abstract class NPCPoolManager : MonoBehaviour
 
     protected string name;
     protected NPCType type;
-    protected int grade;
-    protected float blood;
-    protected bool isDead;
+    protected int grade;//等级
+    protected float blood;//血量
+    protected bool isDead;//是否死亡
     protected float speed;//运动速度
 
     public virtual void Init(float attackDamage, float attackRange, int grade, float speed, float blood) { }//初始化类

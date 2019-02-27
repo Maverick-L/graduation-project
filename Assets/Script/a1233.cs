@@ -5,14 +5,18 @@ using UnityEngine;
 public class a1233 : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject TarNpc;
+    public Transform TargetNPC;
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-    print(GameManagers._instance._levelManager.Text());
-}
+        GameManagers._instance.Text();
+        GameManagers._instance._levelManager.Text();
+    
+    }
 }

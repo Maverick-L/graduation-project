@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class LevelManager : MonoBehaviour
+public class LevelManager 
 {
-
     private string sceneName;//当前场景名称
     private string nextSceneName;//下一个场景名称
     private string cutSceneName;//切换场景名称
@@ -66,7 +65,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            print("Queue中无关卡");
+           // print("Queue中无关卡");
         }
         //先进入加载场景中，在加载场景中加载nextScene。
         CutScene();
@@ -83,7 +82,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            print("暂时没有随机关卡");
+          //  print("暂时没有随机关卡");
         }
         CutScene();
     }
