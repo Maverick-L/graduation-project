@@ -10,19 +10,19 @@ public class GameManagers : MonoBehaviour {
     public GUIManager _guiManager;
     public LevelManager _levelManager;
     public Effect _effect;
-    private void Start()
-    { 
-        if (_instance == null)
-        {
-            _instance = this;
-        }
-        DontDestroyOnLoad(_instance);
-        initManager();
+
+ static GameManagers()
+    {
+        GameObject go = new GameObject("GameManagers");
+        DontDestroyOnLoad(go);
+        _instance = go.AddComponent<GameManagers>();
+       _instance.initManager();
     }
+    
 
     public void initManager()
     {
-        _poolManager = new PoolManager();
+        _poolManager = new PoolManager(); 
         _audioManager = new AudioManager();
         _guiManager = new GUIManager();
         _levelManager = new LevelManager();
@@ -109,6 +109,16 @@ public class GameManagers : MonoBehaviour {
     public void CutHiddleScene()
     {
         _levelManager.HiddenScene();
+    }
+
+    public string  NextSceneName()
+    {
+        return _levelManager.NextSceneName;
+    }
+
+    public string CutSceneName()
+    {
+        return _levelManager.CutSceneName;
     }
 }
 

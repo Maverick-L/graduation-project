@@ -47,7 +47,9 @@ public class LevelManager : MonoBehaviour
     {
         set { hiddenLevel.Add(value); }
     }
-
+    /// <summary>
+    /// 进入选择关卡
+    /// </summary>
     public void ChooseScene(string name)
     {
         nextSceneName = name;
@@ -55,7 +57,7 @@ public class LevelManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 进入下一关卡
+    /// 进入下一个普通关卡
     /// </summary>
     public void NomalScene()
     {
@@ -106,6 +108,11 @@ public class LevelManager : MonoBehaviour
         //寻找人物的初始落点
         //初始化人物的资源
         //初始化人物的武器
+    }
+
+    public string Text()
+    {
+        return "Text成功";
     }
 
 }
