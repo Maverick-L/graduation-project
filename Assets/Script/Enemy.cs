@@ -4,42 +4,20 @@ using UnityEngine;
 
 public class Enemy : NPCPoolManager
 {
+    /*
+     * 一类怪物的攻击范围，初始伤害量应该是固定的，根据怪物的等级来逐步的加强怪物的攻击力，血量值
+     * 提升数值要确定
+     * 在达到什么等级或者初始赋予怪物什么攻击模式
+     * 怪物等级的高低和掉落装备的等级画等号
+     */
     private float Attackrange;//攻击范围
     private float Attackdamage;//伤害量
-
-  public float AttackRange {
-        get { return Attackrange; }
-
-    }
-
-  public float AttackDamage
-    {
-        get { return Attackdamage; }
-    }
-
-    public string Name
-    {
-        get { return name; }
-    }
-
-    public int Grade
-    {
-        get { return grade; }
-    }
-    public float Blood {
-        get { return blood; }
-  
-    }
-    public float Speed {
-
-        get { return speed; }
-    }
 
   
     public override void Init(float attackDamage,float attackRange,int grade,float speed,float blood)
     {
-        this.grade = Grade;
-        this.Attackdamage = AttackDamage*Grade;
+        this.grade = grade;
+        this.Attackdamage = attackDamage*grade;
         this.Attackrange = attackRange;
         this.speed = speed;
         this.type = NPCType.Enemy;

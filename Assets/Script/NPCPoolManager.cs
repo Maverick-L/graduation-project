@@ -7,7 +7,6 @@ public abstract class NPCPoolManager : MonoBehaviour
     protected enum NPCType
     {
         Enemy,
-        Player,
         Merchant
     }
 

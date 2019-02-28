@@ -11,20 +11,17 @@ public class PoolManager  {
         Arm
     }
     private bool isInpool;
-    public NPCPoolManager _NPCinstance;//AI
-    public Consumables _Consumablesinstance;//物品
-    public Arm _Arminstance;//武器
-    private Dictionary<Type, Queue<GameObject>> pool = new Dictionary<Type, Queue<GameObject>>();//创建对象池，存放所有对象
+    private Dictionary<Type , Queue<GameObject>> pool = new Dictionary<Type, Queue<GameObject>>();//创建对象池，存放所有对象
 
     /// <summary>
     /// 初始化PoolManager
     /// </summary>
     public PoolManager()
     {
+      
         pool.Add(Type.NPC,new Queue<GameObject>());
         pool.Add(Type.Arm, new Queue<GameObject>());
         pool.Add(Type.Consumables, new Queue<GameObject>());
-        
     }
 
     /// <summary>
@@ -32,6 +29,7 @@ public class PoolManager  {
     /// </summary>
     public GameObject Create(Transform targetTransform, GameObject targetObject, Type type)
     {
+       
         foreach (GameObject ob in pool[type])
         {
             if (ob.name.Equals(targetObject.name) && ob.activeSelf == false)

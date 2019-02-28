@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager 
 {
     private AudioClip AudioClip;//音乐文件
     public AudioSource Audio;//音乐播放组件

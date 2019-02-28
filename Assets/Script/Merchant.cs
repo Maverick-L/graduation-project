@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class Merchant : NPCPoolManager
 {
-    public string Name
-    {
-        get { return name; }
-    }
-
-    public int Grade
-    {
-        get { return grade; }
-    }
-
+    /*
+     * 初始化设定此商人的售卖装备是什么，等级什么
+     * 售卖的装备等级应该与商人等级划等号
+     */
     public void Init(int grade) {
         this.name = this.gameObject.name;
         this.type = NPCType.Merchant;

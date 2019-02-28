@@ -30,7 +30,6 @@ public class Player : NPCPoolManager
 
     public  void Init( int Grade, float speed, float blood)
     {
-        this.type = NPCType.Player;
         this.name = this.gameObject.name;
         this.grade = Grade;
         this.blood = blood;

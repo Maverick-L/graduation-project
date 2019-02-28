@@ -28,6 +28,7 @@ public class GameManagers : MonoBehaviour {
         _levelManager = new LevelManager();
         _effect = new Effect();
     }
+
     /// <summary>
     /// 创建一个怪物
     /// </summary>
@@ -110,21 +111,24 @@ public class GameManagers : MonoBehaviour {
     {
         _levelManager.HiddenScene();
     }
-
+    /// <summary>
+    /// 返回下一个场景的名称
+    /// </summary>
+    /// <returns></returns>
     public string  NextSceneName()
     {
         return _levelManager.NextSceneName;
     }
-
+    /// <summary>
+    /// 返回切换场景的名称
+    /// </summary>
+    /// <returns></returns>
     public string CutSceneName()
     {
         return _levelManager.CutSceneName;
     }
 
-    public void Text()
-    {
-        print("Text成功");
-    }
+
 }
 
 
