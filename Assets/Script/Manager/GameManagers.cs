@@ -22,10 +22,10 @@ public class GameManagers : MonoBehaviour {
 
     public void initManager()
     {
-        _poolManager = new PoolManager(); 
+        _poolManager = new PoolManager();
         _audioManager = new AudioManager();
         _guiManager = new GUIManager();
-        _levelManager = new LevelManager();
+		_levelManager = new LevelManager();
         _effect = new Effect();
     }
 

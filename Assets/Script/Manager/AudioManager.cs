@@ -20,6 +20,7 @@ public class AudioManager
     public void PlayBG(string filename)
     {
         if (!filename.Equals(curMusicName)) {
+			//Resources/AudioClip/filename
             AudioClip = Resources.Load(Myconts.RSOURCE_AUDIOCLIP_PATH + filename) as AudioClip;//寻找到此文件
             Audio.clip = AudioClip;
             Audio.Play();
