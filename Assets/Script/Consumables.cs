@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Consumables : MonoBehaviour
+public abstract class Consumables :MonoBehaviour
 {
-    protected string name;//消耗品名字
+    protected string Name;//消耗品名字
     protected int price;//消耗品价格
 
     /// <summary>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Merchant : NPCPoolManager
+public class Merchant : NPC
 {
     /*
      * 初始化设定此商人的售卖装备是什么，等级什么

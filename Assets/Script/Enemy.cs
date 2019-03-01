@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : NPCPoolManager
+public class Enemy : NPC
 {
     /*
      * 一类怪物的攻击范围，初始伤害量应该是固定的，根据怪物的等级来逐步的加强怪物的攻击力，血量值
@@ -22,7 +22,7 @@ public class Enemy : NPCPoolManager
         this.speed = speed;
         this.type = NPCType.Enemy;
         this.blood = blood;
-        this.name = this.gameObject.name;
+        this.Name = this.gameObject.name;
     }
 
 

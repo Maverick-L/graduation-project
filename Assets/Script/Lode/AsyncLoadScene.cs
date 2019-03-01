@@ -13,7 +13,7 @@ public class AsyncLoadScene : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name ==GameManagers._instance.CutSceneName())
+        if (SceneManager.GetActiveScene().name ==MainManager._instance.CutSceneName())
         {
             StartCoroutine(AsynLoding());
         }   
@@ -21,7 +21,7 @@ public class AsyncLoadScene : MonoBehaviour
 
     IEnumerator  AsynLoding()
     {
-        operation = SceneManager.LoadSceneAsync(GameManagers._instance.NextSceneName());
+        operation = SceneManager.LoadSceneAsync(MainManager._instance.NextSceneName());
      
         operation.allowSceneActivation = false;
         yield return operation;

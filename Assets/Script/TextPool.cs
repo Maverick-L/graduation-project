@@ -35,6 +35,6 @@ public class TextPool : MonoBehaviour
     {
         //print(GameManagers._instance._levelManager.CutSceneName);
         //print(GameManagers._instance._levelManager.NextSceneName);
-        GameManagers._instance.CutChooseScene("TextScene");
+       MainManager._instance.CutChooseScene("StartScene");
     }
 }

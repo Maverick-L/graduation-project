@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class NPCPoolManager : MonoBehaviour
+public abstract class NPC :MonoBehaviour
 {
     protected enum NPCType
     {
@@ -10,7 +10,7 @@ public abstract class NPCPoolManager : MonoBehaviour
         Merchant
     }
 
-    protected string name;
+    protected string Name;
     protected NPCType type;
     protected int grade;//等级
     protected float blood;//血量

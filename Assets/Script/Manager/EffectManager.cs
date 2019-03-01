@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Effects
+public class Effect
 {
-    public enum Effect
+    public enum Effects
     {
         Nomal,
         Frozen,//冰冻
@@ -12,9 +12,9 @@ public class Effects
         Dizziness,//眩晕
     }
 }
-public class Effect : MonoBehaviour
+public class EffectManager 
 {
-   public  Effect()
+   public  EffectManager()
     {
         init();
     }
@@ -24,13 +24,13 @@ public class Effect : MonoBehaviour
         //获取到各个效果的动画或者是粒子效果
     }
 
-    public void Task(Effects.Effect effects,GameObject Target)
+    public void Task(Effect.Effects effects,GameObject Target)
     {
         switch (effects)
         {
-            case Effects.Effect.Frozen:break;
-            case Effects.Effect.Brun:break;
-            case Effects.Effect.Dizziness:break;
+            case Effect.Effects.Frozen:break;
+            case Effect.Effects.Brun:break;
+            case Effect.Effects.Dizziness:break;
         }
     }
 }

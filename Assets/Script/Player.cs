@@ -2,51 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : NPCPoolManager
+public class Player
 {
-    public string Name
-    {
-        get { return name; }
-    }
-
-    public int Grade
-    {
-        set { grade = value; }
-        get { return grade; }
-    }
-    public float Blood
-    {
-        get { return blood; }
-
-    }
-    public float Speed
-    {
-        set { speed = value; }
-        get { return speed; }
-    }
+    public string Name;
+    public int Grade;
+    public float Blood;
+    public float Speed;
+    
 
     public GameObject[] Arms;//人物的武器
     public GameObject[] Goods;//人物的药品
 
-    public  void Init( int Grade, float speed, float blood)
+    public void Init(string Name, int Grade, float Speed, float Blood)
     {
-        this.name = this.gameObject.name;
-        this.grade = Grade;
-        this.blood = blood;
-        this.speed = speed;
+        this.Name = Name;
+        this.Grade = Grade;
+        this.Speed = Speed;
+        this.Blood = Blood;
     }
 
-    public override void Massager()
-    {
-        throw new System.NotImplementedException();
-    }
 
-    public override void Task()
+    public  void Death()
     {
-        throw new System.NotImplementedException();
-    }
-    public override void Death()
-    {
-        throw new System.NotImplementedException();
+        
     }
 }

@@ -2,12 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Start : MonoBehaviour
+public class TimeManager 
 {
-    private void Awake()
-    {
-       
-    }
-
-
+ 
 }
