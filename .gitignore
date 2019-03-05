@@ -28,13 +28,6 @@ ehthumbs.db
 # Visual Studio 2015 cache/options directory
 /.vs/
 
-#NGUI
-Assets/NGUI
-Asssets/NGUI.meta
-
-#GitHubOfUnity
-Assets/Plugins.meta
-Assets/Plugins
 
 # Unity generated
 # ===============
