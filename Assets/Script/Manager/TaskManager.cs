@@ -8,11 +8,15 @@ public class TaskManager : MonoBehaviour
      * 2.传入进行解析，此任务的需要完成点为什么
      * 3.关卡通关成功后，判定是否完成任务
      * 4.通过反射可以执行Task内部的代码段
+     * 5.通过事件和回调可以设置任务发布，任务是否完成
      */
 
     private MethodInfo[] methodInfo;
     private Task task;
     private int taskCount;
+
+    public delegate bool TaskDelegate(MethodInfo methodInfo);
+    public event TaskDelegate TaskEvent;
     public void Init()
     {
         methodInfo = task.GetType().GetMethods();
@@ -23,7 +27,8 @@ public class TaskManager : MonoBehaviour
 /// </summary>
     public void ChooseTask()
     {
-
+        int index = Random.Range(0, taskCount);
+        TaskIsOver( TaskEvent.Invoke(methodInfo[index]));
     }
 
     /// <summary>
@@ -31,9 +36,15 @@ public class TaskManager : MonoBehaviour
     /// </summary>
     /// <param name="name"></param>
     /// <returns></returns>
-    public bool TaskIsOver(string name)
+    public void TaskIsOver(bool isover)
     {
-        //标注
-        return false;
+        if (isover == true)
+        {
+
+        }
+        else
+        {
+
+        }
     }
 }
