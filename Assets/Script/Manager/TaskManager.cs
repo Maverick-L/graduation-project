@@ -14,9 +14,15 @@ public class TaskManager : MonoBehaviour
     private MethodInfo[] methodInfo;
     private Task task;
     private int taskCount;
-
+    public static TaskManager instance;
     public delegate bool TaskDelegate(MethodInfo methodInfo);
     public event TaskDelegate TaskEvent;
+
+    private TaskManager()
+    {
+        instance = this;
+        Init();
+    }
     public void Init()
     {
         methodInfo = task.GetType().GetMethods();
@@ -28,7 +34,8 @@ public class TaskManager : MonoBehaviour
     public void ChooseTask()
     {
         int index = Random.Range(0, taskCount);
-        TaskIsOver( TaskEvent.Invoke(methodInfo[index]));
+      
+       // TaskIsOver( TaskEvent.BeginInvoke(methodInfo[index]));
     }
 
     /// <summary>
@@ -40,11 +47,11 @@ public class TaskManager : MonoBehaviour
     {
         if (isover == true)
         {
-
+            print("yes");
         }
         else
         {
-
+            print("no");
         }
     }
 }
