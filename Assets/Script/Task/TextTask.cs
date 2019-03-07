@@ -8,6 +8,8 @@ public class TextTask : MonoBehaviour
     void Start()
     {
         TaskManager.instance.TaskEvent += Task;
+
+        TaskManager.instance.ChooseTask();
     }
 
     // Update is called once per frame
@@ -18,6 +20,6 @@ public class TextTask : MonoBehaviour
 
     public bool Task(MethodInfo methodInfo)
     {
-
+        return false;
     }
 }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Reflection;
+using System;
+
 public class TaskManager : MonoBehaviour
 {
     /*1.任务的书面介绍，此任务为什么类型
@@ -11,47 +13,36 @@ public class TaskManager : MonoBehaviour
      * 5.通过事件和回调可以设置任务发布，任务是否完成
      */
 
-    private MethodInfo[] methodInfo;
-    private Task task;
+    private Task[] task;
     private int taskCount;
     public static TaskManager instance;
-    public delegate bool TaskDelegate(MethodInfo methodInfo);
+    public delegate bool TaskDelegate(Task task);
     public event TaskDelegate TaskEvent;
 
     private TaskManager()
     {
         instance = this;
+        InitTaskList();
         Init();
     }
-    public void Init()
+
+    private void InitTaskList()
     {
-        methodInfo = task.GetType().GetMethods();
-        taskCount = methodInfo.Length;
+        task[1] = new Task1();
     }
-/// <summary>
-/// 随机选择任务
-/// </summary>
-    public void ChooseTask()
+    private void Init()
     {
-        int index = Random.Range(0, taskCount);
-      
-       // TaskIsOver( TaskEvent.BeginInvoke(methodInfo[index]));
+        taskCount =task.Length;
     }
 
+
     /// <summary>
-    /// 任务是否完成判断
+    /// 随机选择任务,发布
     /// </summary>
-    /// <param name="name"></param>
-    /// <returns></returns>
-    public void TaskIsOver(bool isover)
+    public void ChooseTask()
     {
-        if (isover == true)
-        {
-            print("yes");
-        }
-        else
-        {
-            print("no");
-        }
+        int index = UnityEngine.Random.Range(0, taskCount);
+        TaskEvent.Invoke(task[index]);
     }
+
 }

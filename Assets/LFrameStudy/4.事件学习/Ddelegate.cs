@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,6 @@ public class Ddelegate : MonoBehaviour
     public event BossHp BossHpEvent;
     //创建一个带返回值的委托
     public delegate string BossHpWithReturn(int hp);
-
     public event BossHpWithReturn BossHpWithReturnEvent;
 
     public static Ddelegate instance;
@@ -20,7 +20,16 @@ public class Ddelegate : MonoBehaviour
     }
     private void Start()
     {
+        //同步调用
         BossHpEvent.Invoke(50);
        print( BossHpWithReturnEvent.Invoke(50));
+        //异步回调
+        BossHpEvent.BeginInvoke(70, AsyncInvoke, null);
     }
+
+    private void AsyncInvoke(IAsyncResult ar)
+    {
+        Debug.Log("异步调用成功");
+    }
+
 }
