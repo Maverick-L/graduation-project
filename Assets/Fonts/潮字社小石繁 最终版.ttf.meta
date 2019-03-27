@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 57e17a12a47775046a45a97a908bd98c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: REEJI-CHAO-XiaoShiT
+  fontNames:
+  - REEJI-CHAO-XiaoShiT
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
