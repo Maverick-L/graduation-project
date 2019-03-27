@@ -8,7 +8,7 @@ public class GameManagers
     public GoldManager _goldManager;
     public TimeManager _timeManager;
     
-    enum Type
+   public enum Type
     {
         NPC,
         Arm

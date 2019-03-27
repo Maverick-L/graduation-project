@@ -22,24 +22,10 @@ public class LevelAreaBase : MonoBehaviour
     {
         _instance = this;
     }
-    private void Start()
-    {
-       print(area);
-    }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
-        {
-            
              LevelAreaEvent.Invoke(this,new EventArgs()); 
-        }
-        //如果进入此范围内的为玩家 则发送消息给UI控件，显示UI
-        else if (other.tag == "player")
-        {
-
-        }
-    
     }
 }
