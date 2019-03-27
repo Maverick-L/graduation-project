@@ -2238,6 +2238,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403488457}
   m_CullTransparentMesh: 0
+--- !u!1 &1435103547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1020247079}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435103548}
+  m_Layer: 0
+  m_Name: level1 (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1435103548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1020247079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435103547}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1559015296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2383,7 +2413,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1630700007}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1630700009}
+        m_MethodName: PlayBnOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1630700007
@@ -2436,6 +2477,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIText: {fileID: 205126422}
+  LoginPanel: {fileID: 449338746}
+  PlayerPanel: {fileID: 916922590}
 --- !u!1 &1671169039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3575,9 +3618,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e266bef4d95595841941c21c3768d5d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Option: {fileID: 2094627789}
-  music_On: {fileID: 277858686}
-  music_Off: {fileID: 2021400098}
 --- !u!1 &2130996873
 GameObject:
   m_ObjectHideFlags: 0

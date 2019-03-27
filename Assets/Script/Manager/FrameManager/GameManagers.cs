@@ -11,7 +11,8 @@ public class GameManagers
     enum Type
     {
         NPC,
-        Arm
+        Arm,
+		UI
     }
 
     
@@ -27,7 +28,7 @@ public class GameManagers
     /// <returns></returns>
     public Enum[] Getenum()
     {
-        Enum[] enums=new Enum[] { Type.NPC,Type.Arm };
+        Enum[] enums=new Enum[] { Type.NPC,Type.Arm ,Type.UI};
         return enums;
     }
 

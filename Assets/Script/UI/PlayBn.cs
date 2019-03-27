@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class PlayBn : MonoBehaviour
 {
 	public Text UIText;
+	public GameObject LoginPanel, PlayerPanel;
 	private float timer;
-    // Start is called before the first frame update
+
     void Start()
     {
 		timer = 0.0f;
     }
 
-	// Update is called once per frame
 	void Update()
 	{
 		timer += Time.deltaTime * 2;
@@ -26,4 +26,10 @@ public class PlayBn : MonoBehaviour
 			UIText.text = "开始游戏";
 		}
     }
+
+	public void PlayBnOnClick()
+	{
+		LoginPanel.SetActive(false);
+		PlayerPanel.SetActive(true);
+	}
 }
