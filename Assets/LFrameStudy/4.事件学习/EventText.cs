@@ -1,33 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class EventText : MonoBehaviour
+namespace LFrameStudy
 {
-
-    void Start()
+    public class EventText : MonoBehaviour
     {
-        Ddelegate.instance.BossHpEvent += BossHp;
-        Ddelegate.instance.BossHpEvent += privateBossHp;
-        Ddelegate.instance.BossHpWithReturnEvent += BossHpWithReturn;
-       
-    }
 
-    // Update is called once per frame
+        void Start()
+        {
+            Ddelegate.instance.BossHpEvent += BossHp;
+            Ddelegate.instance.BossHpWithReturnEvent += BossHpWithReturn;
 
-    public void BossHp(int hp)
-    {
-        Debug.Log(hp);
-    }
+        }
 
-    private void privateBossHp(int hp)
-    {
-        Debug.Log(hp+10);
-    }
+        // Update is called once per frame
 
-    private string  BossHpWithReturn(int hp)
-    {
-        Debug.Log(hp + 20);
-        return "yes";
+        public void BossHp(int hp)
+        {
+            Debug.Log(hp);
+        }
+
+
+        private string BossHpWithReturn(int hp)
+        {
+            Debug.Log(hp + 20);
+            return "yes";
+        }
     }
 }

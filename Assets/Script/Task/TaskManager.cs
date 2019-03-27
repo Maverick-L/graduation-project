@@ -6,17 +6,16 @@ using System;
 
 public class TaskManager : MonoBehaviour
 {
-    /*1.任务的书面介绍，此任务为什么类型
-     * 2.传入进行解析，此任务的需要完成点为什么
-     * 3.关卡通关成功后，判定是否完成任务
-     * 4.通过反射可以执行Task内部的代码段
-     * 5.通过事件和回调可以设置任务发布，任务是否完成
+    /*1.创建Task类数组，用来存储所有继承与Task类的任务
+     * 2.通过InitTaskList()初始化所有的任务，存入数组中
+     * 3.初始化信息
+     * 4.发布任务到监听的类中去
      */
 
     private Task[] task;
     private int taskCount;
     public static TaskManager instance;
-    public delegate bool TaskDelegate(Task task);
+    public delegate void TaskDelegate(Task task);
     public event TaskDelegate TaskEvent;
 
     private TaskManager()
@@ -28,7 +27,7 @@ public class TaskManager : MonoBehaviour
 
     private void InitTaskList()
     {
-        task[1] = new Task1();
+        task=new Task[] { new Task1()};
     }
     private void Init()
     {

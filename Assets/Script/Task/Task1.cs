@@ -7,6 +7,11 @@ public class Task1 : Task
 {
     private string taskIntro;
     private int KillEnemyCount;
+
+    public Task1()
+    {
+        Init();
+    }
     public void Init()
     {
         taskIntro = "任务介绍";
@@ -20,18 +25,21 @@ public class Task1 : Task
         }
     }
 
+
     /// <summary>
     /// 任务是否完成检测
     /// </summary>
     /// <param name="obj">传入int类型变量</param>
     /// <returns></returns>
-    public  bool TaskIsOver(UnityEngine.Object obj)
+    public  bool TaskIsOver(object @object)
     {
-        int killEnemyCount = Convert.ToInt32(obj);
+        int killEnemyCount = Convert.ToInt32(@object);
         if (killEnemyCount >= KillEnemyCount)
         {
             return true;
         }
         return false;
     }
+
+
 }

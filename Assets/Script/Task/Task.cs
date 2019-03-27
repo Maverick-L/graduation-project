@@ -5,9 +5,9 @@ using UnityEngine;
 public  interface Task
 {
     //任务简介
-    string TaskIntro { get ; }
+    string TaskIntro { get; }
     //任务判定
-    bool TaskIsOver(Object obj);
+    bool TaskIsOver(System.Object @object);
 
 
 }

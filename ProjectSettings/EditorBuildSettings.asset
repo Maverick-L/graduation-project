@@ -14,4 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TextScene.unity
     guid: 132c4a74803ac3640b49e08957e30964
+  - enabled: 1
+    path: "Assets/LFrameStudy/7.UnityAPI\u5B66\u4E60/01-MainScene.unity"
+    guid: f2c3beeaffe52614f88b0a7b39d35d0f
+  - enabled: 1
+    path: "Assets/LFrameStudy/7.UnityAPI\u5B66\u4E60/02-MenuScene.unity"
+    guid: 270bad32cf2f0d64196b46fc8a8330c4
+  - enabled: 1
+    path: "Assets/LFrameStudy/9.\u573A\u666F\u5207\u6362/Example.unity"
+    guid: 0fe925ca094d5574d9f4c9cdc6d3bf6a
+  - enabled: 1
+    path: "Assets/LFrameStudy/9.\u573A\u666F\u5207\u6362/Example-02.unity"
+    guid: 7e94eab43d07f524a880ad2f2c422286
+  - enabled: 1
+    path: "Assets/LFrameStudy/9.\u573A\u666F\u5207\u6362/Example-cut.unity"
+    guid: 6e8be23e31c249f49946e0f6825244da
   m_configObjects: {}

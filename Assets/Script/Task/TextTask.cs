@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Reflection;
 public class TextTask : MonoBehaviour
 {
-    private MethodInfo methodInfo;
+    private Task task;
     void Start()
     {
         TaskManager.instance.TaskEvent += Task;
@@ -18,8 +18,10 @@ public class TextTask : MonoBehaviour
         
     }
 
-    public bool Task(MethodInfo methodInfo)
+    public void Task(Task task)
     {
-        return false;
+        this.task = task;
+        print(task.TaskIntro);
+        task.TaskIsOver(50);
     }
 }
