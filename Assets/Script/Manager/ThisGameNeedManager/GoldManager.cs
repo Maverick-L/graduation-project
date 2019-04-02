@@ -11,4 +11,6 @@ public class GoldManager
     {
         Gold = gold;
     }
+
+   
 }

@@ -9,7 +9,6 @@ public class MainManager : MonoBehaviour {
     public AudioManager _audioManager;
     public GUIManager _guiManager;
     public LevelManager _levelManager;
-    public GameManagers _gameManager;
 
   
 
@@ -19,6 +18,7 @@ public class MainManager : MonoBehaviour {
         {
             _instance = this;
             DontDestroyOnLoad(this);
+            DontDestroyOnLoad(GameManagers._instance);
             initManager();
         }
     }
@@ -31,10 +31,11 @@ public class MainManager : MonoBehaviour {
         _audioManager = new AudioManager();
         _guiManager = new GUIManager();
 		_levelManager = new LevelManager();
-        _gameManager = new GameManagers();
-        _poolManager = new PoolManager(_gameManager.Getenum());
+        _poolManager = new PoolManager(GameManagers._instance.Getenum());
     }
 
+
+    #region Method
 
     /// <summary>b
     /// 生成，创建
@@ -93,7 +94,7 @@ public class MainManager : MonoBehaviour {
     {
         return _levelManager.CutSceneName;
     }
-
+    #endregion
 
 }
 

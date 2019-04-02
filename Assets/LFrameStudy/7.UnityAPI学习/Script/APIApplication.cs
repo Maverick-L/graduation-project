@@ -42,7 +42,7 @@ public class APIApplication : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            UnityEditor.EditorApplication.isPlaying = false;
+            //UnityEditor.EditorApplication.isPlaying = false;
         }
     }
 }

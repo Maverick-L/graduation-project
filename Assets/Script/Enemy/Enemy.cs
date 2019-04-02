@@ -23,6 +23,7 @@ public class Enemy : NPC
     {
         LevelAreaBase._instance.LevelAreaEvent += Initgrade;
         Spherecollider = GetComponent<SphereCollider>();
+
     }
     private void Start()
     {

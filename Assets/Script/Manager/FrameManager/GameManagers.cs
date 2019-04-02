@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-public class GameManagers
+using UnityEngine.Events;
+public class GameManagers :MonoBehaviour
 {
+
+    public static GameManagers _instance;
     public EffectManager _effectManager;
     public GoldManager _goldManager;
     public TimeManager _timeManager;
@@ -14,14 +17,19 @@ public class GameManagers
         Arm,
 		UI
     }
+    #region Event
 
-    
-   public GameManagers()
+
+    #endregion
+    public GameManagers()
     {
+        
         //监听
         NPC.DeathEvent += Death;
     }
 
+
+    #region Method Public
     /// <summary>
     /// 初始化PoolManager需要用到的枚举
     /// </summary>
@@ -67,5 +75,17 @@ public class GameManagers
                 break;
         }
     }
+    #endregion
 
+    #region Method Private
+
+    private void Award(int grade)
+    {
+    }
+
+    public void Text()
+    {
+
+    }
+    #endregion
 }
