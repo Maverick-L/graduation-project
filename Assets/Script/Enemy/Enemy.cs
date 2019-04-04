@@ -12,16 +12,12 @@ public class Enemy : NPC
      * 怪物等级的高低和掉落装备的等级画等号
      */
 
-    private float Attackdamage;//伤害量
+    public float Attackdamage;//伤害量
 
-    Enemy()
-    {
-        Init();
-    }
 
     private void Awake() 
     {
-        LevelAreaBase._instance.LevelAreaEvent += Initgrade;
+      //  LevelAreaBase._instance.LevelAreaEvent += Initgrade;
         Spherecollider = GetComponent<SphereCollider>();
 
     }
@@ -29,17 +25,7 @@ public class Enemy : NPC
     {
        
     }
-    /// <summary>
-    /// 初始化不随等级改变的值
-    /// </summary>
-    public override void Init()
-    {
-        base.Init();
-        //可以采用在Excel里存储的方式获取
-        this.type = NPCType.Enemy;
-        this.Attackdamage = 10f;
-      //  Spherecollider.radius = Range;
-    }
+ 
     //监听LevelArea 确定其他的和等级有关系的初始值为多少
     private void Initgrade(object sender,EventArgs e)
     {

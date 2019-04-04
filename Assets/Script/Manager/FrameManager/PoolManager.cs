@@ -45,36 +45,28 @@ public class PoolManager  {
 
 
     /// <summary>
-    /// 销毁一个物体
+    /// 销毁一个物体  有错
     /// </summary>
-    public void Destroy(GameObject targetObject, float time=0)
+    public void Destroy(GameObject targetObject,Enum type, float time=0)
     {
-        foreach (Enum t in pool.Keys)
-        {
-            foreach (GameObject go in pool[t])
+            foreach (GameObject go in pool[type])
             {
-                if (go.name.Equals(targetObject.name) && targetObject.transform == go.transform && go.activeSelf == true)
+                if (go==targetObject && go.activeSelf == true)
                 {
                     go.SetActive(false);
+                return;
                 }
-
+            Debug.Log(go.name);
             }
-        }
+        pool[type].Enqueue(targetObject);
+        targetObject.SetActive(false);
     }
     /// <summary>
     /// 统一清除所有。
     /// </summary>
     public void ResetPool()
     {
-        foreach( Queue<GameObject> qu in pool.Values)
-        {
-            foreach(GameObject go in qu)
-            {
-                Destroy(go);
-                
-            }
-            qu.Clear();
-        }
+     
         pool.Clear();
     }
 

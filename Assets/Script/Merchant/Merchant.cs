@@ -14,12 +14,7 @@ public class Merchant : NPC
         LevelAreaBase._instance.LevelAreaEvent += Initgrade;
         Spherecollider = GetComponent<SphereCollider>();
     }
-    public override void Init() {
-        base.Init();
-        this.type = NPCType.Merchant;
-
-       // Spherecollider.radius = Range;
-    }
+  
 
     private void Initgrade(object sender, EventArgs e)
     {

@@ -18,14 +18,14 @@ public class MainManager : MonoBehaviour {
         {
             _instance = this;
             DontDestroyOnLoad(this);
-            DontDestroyOnLoad(GameManagers._instance);
-            initManager();
+         //   DontDestroyOnLoad(GameManagers._instance);
+            InitManager();
         }
     }
 
 
 
-    public void initManager()
+    public void InitManager()
     {
        
         _audioManager = new AudioManager();
@@ -37,18 +37,6 @@ public class MainManager : MonoBehaviour {
 
     #region Method
 
-    /// <summary>b
-    /// 生成，创建
-    /// </summary>
-    public GameObject Create(GameObject go,Enum type = null)
-    {
-        return _poolManager.Create(go,type);
-    }
-
-    public void Destroy(GameObject go)
-    {
-        _poolManager.Destroy(go);
-    }
 
     /// <summary>
     /// 清除对象池中所有数据

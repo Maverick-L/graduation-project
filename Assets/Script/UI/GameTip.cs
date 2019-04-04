@@ -13,7 +13,7 @@ public class GameTip : MonoBehaviour
 	private void _instance_LevelAreaEvent(object sender, System.EventArgs e)
 	{
 		GameObject tip = Resources.Load(Myconts.REOURCE_UI_PATH + "Tips") as GameObject;
-        MainManager._instance.Create(tip, GameManagers.Type.UI);
+        MainManager._instance._poolManager.Create(tip, GameManagers.Type.UI);
 	}
 
 }
