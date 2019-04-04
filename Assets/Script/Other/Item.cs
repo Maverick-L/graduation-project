@@ -7,9 +7,9 @@ public class   Item:MonoBehaviour
     public int id;
     public new string name;
     public int grade =1;
-    public string Intro;
+    public string Intro;    
     public int price;
     public int durable=100;
 
-    public virtual void Init() { }
+    public virtual void Init(ArmMassage items) { }
 }

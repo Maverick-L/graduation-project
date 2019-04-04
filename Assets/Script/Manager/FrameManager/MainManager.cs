@@ -19,7 +19,7 @@ public class MainManager : MonoBehaviour {
             _instance = this;
             DontDestroyOnLoad(this);
          //   DontDestroyOnLoad(GameManagers._instance);
-            InitManager();
+           
         }
     }
 
@@ -34,7 +34,7 @@ public class MainManager : MonoBehaviour {
         _poolManager = new PoolManager(GameManagers._instance.Getenum());
     }
 
-
+ 
     #region Method
 
 
@@ -45,6 +45,7 @@ public class MainManager : MonoBehaviour {
     {
         _poolManager.ResetPool();
     }
+
     /// <summary>
     /// 进入选择关卡
     /// </summary>
@@ -52,6 +53,7 @@ public class MainManager : MonoBehaviour {
     {
         _levelManager.ChooseScene(name);
     }
+    
     /// <summary>
     /// 进入下一关
     /// </summary>
@@ -59,6 +61,7 @@ public class MainManager : MonoBehaviour {
     {
         _levelManager.NomalScene();
     }
+    
     /// <summary>
     /// 进入隐藏关卡
     /// </summary>
@@ -66,6 +69,7 @@ public class MainManager : MonoBehaviour {
     {
         _levelManager.HiddenScene();
     }
+    
     /// <summary>
     /// 返回下一个场景的名称
     /// </summary>
@@ -74,6 +78,7 @@ public class MainManager : MonoBehaviour {
     {
         return _levelManager.NextSceneName;
     }
+    
     /// <summary>
     /// 返回切换场景的名称
     /// </summary>

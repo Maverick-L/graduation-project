@@ -8,11 +8,22 @@ public class Test : MonoBehaviour
     public GameObject nowArm;
     public GameObject text;
 
-    private void Start()
+ 
+    private void Update()
     {
-        GameManagers._instance.CutArm(nowArm, "Sphere");
-        MainManager._instance._poolManager.Destroy(text, GameManagers.Type.NPC);
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            GameManagers._instance.CutArm("Sphere");
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            GameManagers._instance.CutArm("Cube");
+        }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            GameManagers._instance.CutArm("Capsule");
+        }
+        
     }
-    
 
 }

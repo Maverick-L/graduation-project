@@ -38,6 +38,7 @@ public class PoolManager  {
             }  
         }
         GameObject go=GameObject.Instantiate(targetObject);
+        go.SetActive(false);
         go.name = targetObject.name;
         pool[type].Enqueue(go);
         return go;
@@ -53,7 +54,7 @@ public class PoolManager  {
             {
                 if (go==targetObject && go.activeSelf == true)
                 {
-                    go.SetActive(false);
+                targetObject.SetActive(false);
                 return;
                 }
             Debug.Log(go.name);
