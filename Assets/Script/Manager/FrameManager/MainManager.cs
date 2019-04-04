@@ -18,7 +18,6 @@ public class MainManager : MonoBehaviour {
         {
             _instance = this;
             DontDestroyOnLoad(this);
-         //   DontDestroyOnLoad(GameManagers._instance);
            
         }
     }
