@@ -62,7 +62,7 @@ public class GameManagers :MonoBehaviour
         //监听
         NPC.DeathEvent += Death;
     }
-
+    #endregion
 
 
 
@@ -161,27 +161,24 @@ public class GameManagers :MonoBehaviour
         go.SetActive(true);
     }
 
-    #endregion
-
-    #region Method Private
-<<<<<<< HEAD
-
-=======
->>>>>>> 098f48a78f9565705f2a645772b401b13ba6039d
-
-    public void Award(int grade,Transform point)
+    public void Award(int grade, Transform point)
     {
         //奖励金币
         //奖励武器
         ArmMassage arm = new ArmMassage();
-          arm=  AwardArm();
+        arm = AwardArm();
         GameObject go1 = Resources.Load(Myconts.RSOURCE_PREFABS_ARM_PATH + arm.name) as GameObject;
         GameObject go = MainManager._instance._poolManager.Create(go1, Type.Arm);
         go.transform.position = point.position;
         go.transform.rotation = point.rotation;
         InitArm(go, arm);
-       
+
     }
+
+    #endregion
+
+    #region Method Private
+
 
     /// <summary>
     /// 奖励武器
