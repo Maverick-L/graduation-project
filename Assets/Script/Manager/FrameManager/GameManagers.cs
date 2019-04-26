@@ -21,7 +21,7 @@ public class GameManagers :MonoBehaviour
     }
 
     #region property
-   
+
     #endregion
 
 
@@ -30,7 +30,22 @@ public class GameManagers :MonoBehaviour
 
     #endregion
 
-   
+    #region MonoBehaviour Method
+    private void Awake()
+    {
+        _instance = this;
+        MainManager._instance.InitManager();
+        StartCoroutine(InitExcel());
+        //人物拥有的三把武器不需要进入poolmanager  初始化之后存放在这个里面就可以
+        playerItems[0] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Cube") as GameObject, Type.Arm);
+        playerItems[1] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Sphere") as GameObject, Type.Arm);
+        playerItems[2] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Capsule") as GameObject, Type.Arm);
+        playerItems[0].SetActive(true);//默认开启第一把武器
+        //监听
+        NPC.DeathEvent += Death;
+    }
+    #endregion
+
 
     #region Method Public
     /// <summary>
@@ -100,6 +115,7 @@ public class GameManagers :MonoBehaviour
         }
         return null;
     } 
+
     /// <summary>
     /// 武器切换
     /// </summary>
@@ -127,19 +143,7 @@ public class GameManagers :MonoBehaviour
     #endregion
 
     #region Method Private
-    private void Awake()
-    {
-        _instance = this;
-        MainManager._instance.InitManager();
-        StartCoroutine(InitExcel());
-        //人物拥有的三把武器不需要进入poolmanager  初始化之后存放在这个里面就可以
-        playerItems[0] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Cube") as GameObject, Type.Arm);
-        playerItems[1] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Sphere") as GameObject, Type.Arm);
-        playerItems[2] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Capsule") as GameObject, Type.Arm);
-        playerItems[0].SetActive(true);
-        //监听
-        NPC.DeathEvent += Death;
-    }
+
 
     private void Award(int grade,Transform point)
     {
