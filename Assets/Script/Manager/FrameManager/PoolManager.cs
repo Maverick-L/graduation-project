@@ -32,7 +32,7 @@ public class PoolManager  {
        
         foreach (GameObject ob in pool[type])
         {
-            if (ob.name.Equals(targetObject.name) && ob.activeSelf == false)
+            if (ob.name==targetObject.name && ob.activeSelf == false)
             {
                 return ob;
             }  
@@ -46,7 +46,7 @@ public class PoolManager  {
 
 
     /// <summary>
-    /// 销毁一个物体  有错
+    /// 销毁一个物体  
     /// </summary>
     public void Destroy(GameObject targetObject,Enum type, float time=0)
     {
@@ -57,7 +57,6 @@ public class PoolManager  {
                 targetObject.SetActive(false);
                 return;
                 }
-            Debug.Log(go.name);
             }
         pool[type].Enqueue(targetObject);
         targetObject.SetActive(false);

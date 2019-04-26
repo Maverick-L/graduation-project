@@ -7,7 +7,7 @@ public class Test : MonoBehaviour
 {
     public GameObject nowArm;
     public GameObject text;
-
+    public Transform point;
  
     private void Update()
     {
@@ -22,6 +22,11 @@ public class Test : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Y))
         {
             GameManagers._instance.CutArm("Capsule");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameManagers._instance.Award(2, point);
         }
         
     }
