@@ -49,7 +49,6 @@ public class GameManagers :MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(this);
         }
         MainManager._instance.InitManager();
         StartCoroutine(InitExcel());
@@ -61,6 +60,7 @@ public class GameManagers :MonoBehaviour
         //监听
         NPC.DeathEvent += Death;
     }
+
     #endregion
 
     #region Method Public
