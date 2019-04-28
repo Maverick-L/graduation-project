@@ -21,12 +21,13 @@ public class GameManagers :MonoBehaviour
     private ArmMassage[] Allitems;//存放游戏中所有的武器
     private GameObject[] playerItems=new GameObject[3];//存放玩家拥有的武器,玩家只能，最多拥有三把武器
     private bool armIsFull = false;//用来判断是否满了；
+    private GameObject tipUI;//用来确定按下是yes和no的提示
     #endregion
 
     #endregion
 
     #region Enum
-    public enum Type
+    public enum Pooltype
     {
         NPC,
         Arm,
@@ -53,9 +54,9 @@ public class GameManagers :MonoBehaviour
         MainManager._instance.InitManager();
         StartCoroutine(InitExcel());
         //人物拥有的三把武器不需要进入poolmanager  初始化之后存放在这个里面就可以
-        playerItems[0] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Cube") as GameObject, Type.Arm);
-        playerItems[1] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Sphere") as GameObject, Type.Arm);
-        playerItems[2] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Capsule") as GameObject, Type.Arm);
+        playerItems[0] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Cube") as GameObject, Pooltype.Arm);
+        playerItems[1] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Sphere") as GameObject, Pooltype.Arm);
+        playerItems[2] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Capsule") as GameObject, Pooltype.Arm);
         playerItems[0].SetActive(true);
         //监听
         NPC.DeathEvent += Death;
@@ -71,7 +72,7 @@ public class GameManagers :MonoBehaviour
     /// <returns></returns>
     public Enum[] Getenum()
     {
-        Enum[] enums=new Enum[] { Type.NPC,Type.Arm ,Type.UI};
+        Enum[] enums=new Enum[] { Pooltype.NPC,Pooltype.Arm ,Pooltype.UI};
         return enums;
     }
 
@@ -80,7 +81,7 @@ public class GameManagers :MonoBehaviour
     /// </summary>
     public void CreatEnemy(Transform targetTransform, GameObject targetObject)
     {
-       GameObject go= MainManager._instance._poolManager.Create(targetObject,Type.NPC);
+       GameObject go= MainManager._instance._poolManager.Create(targetObject, Pooltype.NPC);
         go.transform.position = targetTransform.position;
         go.transform.rotation = targetTransform.rotation;
         go.transform.parent = targetTransform;
@@ -92,7 +93,7 @@ public class GameManagers :MonoBehaviour
     /// </summary>
     public void CreateMerchant(Transform targetTransform, GameObject targetObject)
     {
-        GameObject go = MainManager._instance._poolManager.Create(targetObject,Type.NPC);
+        GameObject go = MainManager._instance._poolManager.Create(targetObject,Pooltype.NPC);
     }
 
     /// <summary>
@@ -102,7 +103,7 @@ public class GameManagers :MonoBehaviour
     /// <param name="e"></param>
     public void Death(System.Object sender,DeathEventArgs e )
     {
-        MainManager._instance._poolManager.Destroy(e.senderObject,Type.NPC);
+        MainManager._instance._poolManager.Destroy(e.senderObject,Pooltype.NPC);
         switch (sender.GetType().Name)
         {
             case "Enemy":
@@ -116,21 +117,20 @@ public class GameManagers :MonoBehaviour
     }
 
     /// <summary>
-    /// 
-    /// 生成的装备是Player所拥有的装备
-    /// 
-    /// 指定名字的装备，如果有名字相同的返回第一个，如果装备没有，则返回空
+    /// 生成武器
     /// </summary>
     /// <param name="name">装备名字</param>
     /// <returns></returns>
     public GameObject CreateArm(string name)
     {
-        foreach(GameObject item in playerItems)
+        foreach(ArmMassage item in Allitems)
         {
-            if (name == item.name&&item.activeSelf==false)
+            if (name == item.name)
             {
-     
-                return item;
+                GameObject go = Resources.Load(Myconts.RSOURCE_PREFABS_ARM_PATH + name) as GameObject;
+                go = MainManager._instance._poolManager.Create(go, Pooltype.Arm);
+                return go;
+
             }
         }
         return null;
@@ -158,6 +158,12 @@ public class GameManagers :MonoBehaviour
         go.SetActive(true);
     }
 
+    public void TipUI(string text)
+    {
+
+    }
+
+
     #endregion
 
     #region Method Private
@@ -169,7 +175,7 @@ public class GameManagers :MonoBehaviour
         ArmMassage arm = new ArmMassage();
           arm=  AwardArm();
         GameObject go1 = Resources.Load(Myconts.RSOURCE_PREFABS_ARM_PATH + arm.name) as GameObject;
-        GameObject go = MainManager._instance._poolManager.Create(go1, Type.Arm);
+        GameObject go = MainManager._instance._poolManager.Create(go1, Pooltype.Arm);
         go.transform.position = point.position;
         go.transform.rotation = point.rotation;
         InitArm(go, arm);
@@ -183,7 +189,6 @@ public class GameManagers :MonoBehaviour
     private ArmMassage AwardArm()
     {
         int index = UnityEngine.Random.Range(0,Allitems.Length-1);
-        print(Allitems[index].Intro);
         return Allitems[index];
     }
 
@@ -235,6 +240,7 @@ public class GameManagers :MonoBehaviour
             Allitems[i].attackSpeed = float.Parse(Item[i,5].ToString());
             Allitems[i].grade = 1;
             Allitems[i].durable = 100;
+            Allitems[i].sprite = Resources.Load(Myconts.RESOURCE_SPRITE_ARM_PATH + Allitems[i].name) as Sprite;
         }
 
         yield return Allitems;
