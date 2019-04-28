@@ -39,12 +39,14 @@ public class GameManagers :MonoBehaviour
 
     #endregion
 
+
     #region Event
 
 
     #endregion
 
-    #region Mono Method
+    #region MonoBehaviour Method
+
     private void Awake()
     {
         if (_instance == null)
@@ -61,8 +63,9 @@ public class GameManagers :MonoBehaviour
         //监听
         NPC.DeathEvent += Death;
     }
-
     #endregion
+
+
 
     #region Method Public
 
@@ -158,6 +161,7 @@ public class GameManagers :MonoBehaviour
         go.SetActive(true);
     }
 
+<<<<<<< HEAD
     public void TipUI(string text)
     {
 
@@ -169,18 +173,26 @@ public class GameManagers :MonoBehaviour
     #region Method Private
 
     public void Award(int grade,Transform point)
+=======
+    public void Award(int grade, Transform point)
+>>>>>>> c5d8db0ed010fa6404e5f29daeab276cf8058970
     {
         //奖励金币
         //奖励武器
         ArmMassage arm = new ArmMassage();
-          arm=  AwardArm();
+        arm = AwardArm();
         GameObject go1 = Resources.Load(Myconts.RSOURCE_PREFABS_ARM_PATH + arm.name) as GameObject;
         GameObject go = MainManager._instance._poolManager.Create(go1, Pooltype.Arm);
         go.transform.position = point.position;
         go.transform.rotation = point.rotation;
         InitArm(go, arm);
-       
+
     }
+
+    #endregion
+
+    #region Method Private
+
 
     /// <summary>
     /// 奖励武器
