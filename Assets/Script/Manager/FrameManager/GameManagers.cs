@@ -7,22 +7,18 @@ public class GameManagers :MonoBehaviour
 {
     #region Fild
 
-    #region static
     public static GameManagers _instance;
-    #endregion
 
-    #region publis
     public EffectManager _effectManager;
     public GoldManager _goldManager;
     public TimeManager _timeManager;
-    #endregion
 
-    #region private
+
     private ArmMassage[] Allitems;//存放游戏中所有的武器
-    private GameObject[] playerItems=new GameObject[3];//存放玩家拥有的武器,玩家只能，最多拥有三把武器
-    private bool armIsFull = false;//用来判断是否满了；
     private GameObject tipUI;//用来确定按下是yes和no的提示
-    #endregion
+    private ArmMassage[] takeArm;//确定带走的武器
+    private DrugMassage[] takeDrug;//确定带走的药品
+
 
     #endregion
 
@@ -36,6 +32,9 @@ public class GameManagers :MonoBehaviour
     #endregion
 
     #region property
+    public bool backIsFull { get; set; }//背包是否满格
+    public ArmMassage[] TakeArm { get { return takeArm; } }
+    public DrugMassage[] TakeDrug { get { return takeDrug; } }
 
     #endregion
 
@@ -54,14 +53,15 @@ public class GameManagers :MonoBehaviour
             _instance = this;
         }
         MainManager._instance.InitManager();
-        StartCoroutine(InitExcel());
-        //人物拥有的三把武器不需要进入poolmanager  初始化之后存放在这个里面就可以
-        playerItems[0] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Cube") as GameObject, Pooltype.Arm);
-        playerItems[1] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Sphere") as GameObject, Pooltype.Arm);
-        playerItems[2] = MainManager._instance._poolManager.Create(Resources.Load(Myconts.RSOURCE_PREFABS_PATH + "Capsule") as GameObject, Pooltype.Arm);
-        playerItems[0].SetActive(true);
+        StartCoroutine(InitArmExcel());
+
         //监听
         NPC.DeathEvent += Death;
+    }
+
+    private void Start()
+    {
+        backIsFull = false;
     }
     #endregion
 
@@ -139,29 +139,8 @@ public class GameManagers :MonoBehaviour
         return null;
     } 
 
-    /// <summary>
-    /// 武器切换
-    /// </summary>
-    /// <param name="nextname">切换后的武器的名称</param>
-    public void CutArm(string nextname)
-    {
-        GameObject go = CreateArm(nextname);
-        if (go == null) {
-            return;
-        }
-        foreach (GameObject item in playerItems)
-        {
-            if (item.activeSelf)
-            {
-                go.transform.position = item.transform.position;
-                go.transform.rotation = item.transform.rotation;
-                item.SetActive(false);
-            }
-        }
-        go.SetActive(true);
-    }
+   
 
-<<<<<<< HEAD
     public void TipUI(string text)
     {
 
@@ -170,12 +149,18 @@ public class GameManagers :MonoBehaviour
 
     #endregion
 
+
+
+
+
     #region Method Private
 
-    public void Award(int grade,Transform point)
-=======
-    public void Award(int grade, Transform point)
->>>>>>> c5d8db0ed010fa6404e5f29daeab276cf8058970
+    /// <summary>
+    /// 奖励
+    /// </summary>
+    /// <param name="grade"></param>
+    /// <param name="point"></param>
+    private void Award(int grade, Transform point)
     {
         //奖励金币
         //奖励武器
@@ -188,11 +173,6 @@ public class GameManagers :MonoBehaviour
         InitArm(go, arm);
 
     }
-
-    #endregion
-
-    #region Method Private
-
 
     /// <summary>
     /// 奖励武器
@@ -214,28 +194,12 @@ public class GameManagers :MonoBehaviour
         initTargetArm.GetComponent<Arm>().Init(arm);
     }
 
-    /// <summary>
-    /// 数组满了之后表示武器背包满格，之后的操作
-    /// </summary>
-    private void ArmIsFull()
-    {
-        if (armIsFull)
-        {
-            //UI显示背包满了是否替换
-        }
-        else
-        {
-
-        }
-
-    }
-
 
     #endregion
 
     #region IEnumator
 
-    IEnumerator InitExcel()
+    IEnumerator InitArmExcel()
     {
         int columnNum = 0;
         int rowsNum = 0;

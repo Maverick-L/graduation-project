@@ -13,5 +13,7 @@ public struct ArmMassage
     public int durable;
     public float attackSpeed;
     public float attackDamage;
+    public int GradeUpMoney { get { return grade * 10; } }
+    public Effect.Effects effect;
     public Sprite sprite;
 }

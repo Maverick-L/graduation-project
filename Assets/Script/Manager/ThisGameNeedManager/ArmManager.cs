@@ -43,16 +43,24 @@ public class ArmManager : GameManagers
     /// <summary>
     /// 武器升级
     /// </summary>
-    public void WeaponUpGrade(ArmMassage arm)
+    public void WeaponUpGrade(GameObject arm)
     {
+        //1.获取升级所需要的金币数
+        //3.查询人物的金币是否足够
+        //4.不够不升级
+        //5.足够升级，减少金币
+        //6.升级之后arm更新
 
     }
 
     /// <summary>
     /// 武器销毁
     /// </summary>
-    public void WeaponDestory(ArmMassage arm)
+    public void WeaponDestory(GameObject arm)
     {
+        ArmMassage a = new ArmMassage();
+        arm.GetComponent<Arm>().Init(a);
+        MainManager._instance._poolManager.Destroy(arm, poolType);
 
     }
     #endregion
@@ -69,7 +77,6 @@ public class ArmManager : GameManagers
     {
         Transform t = Arm.transform;
         go.transform.parent = t;
-        go.AddComponent<Arm>();
         go.GetComponent<Arm>().Init(arm);
     }
     #endregion 
